@@ -1,0 +1,789 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/bmc.png" type="image/x-icon" class="rounded-full">
+    <title>Job Details - BMC</title>
+</head>
+
+<body class="bg-gray-50">
+    <header class="sticky top-0 z-50 backdrop-blur-sm bg-white/80 h-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <div class="text-red-500 font-bold text-2xl"><img src="./images/bmc.png" alt="logo"></div>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-xs">
+                    <a href="careers.html" class="text-blue-600 font-semibold transition-colors">Career</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Partners</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Support</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">About</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Contact</a>
+                </nav>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button"
+                        class="text-gray-900/95 hover:gray-900/95e focus:outline-none focus:gray-900/95">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
+                <a href="careers.html"
+                    class="block px-3 py-2 text-blue-600 font-semibold hover:bg-gray-100 rounded-md">Career</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-100 rounded-md">Partners</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-100 rounded-md">Support</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-100 rounded-md">About</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-100 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <button onclick="goBack()"
+                    class="flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                    Back to Careers
+                </button>
+            </div>
+
+            <div id="job-detail-container" class="bg-white rounded-lg shadow-md p-8">
+            </div>
+
+            <div id="application-form-container" class="mt-12">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900/95 py-6 mt-16">
+        <div class="container mx-auto px-6">
+            <p class="text-white text-sm leading-relaxed text-center">
+                © Copyright 2005-2025 BMC Software, Inc. Use of this site signifies your acceptance of BMC's Terms of
+                Use. BMC, the BMC logo, and other BMC marks are assets of BMC Software, Inc. These trademarks are
+                registered and may be registered in the U.S. and in other countries.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const jobsData = [
+            {
+                id: 1,
+                title: "Customer Service Representative",
+                department: "Support",
+                location: "Remote",
+                type: "Full-time",
+                description: "Provide exceptional customer support and resolve inquiries for our enterprise clients.",
+                fullDescription: "We are seeking a Customer Service Representative to provide exceptional support to our enterprise clients. You'll handle customer inquiries, resolve technical issues, and ensure customer satisfaction through professional communication and problem-solving skills.",
+                requirements: ["High school diploma or equivalent", "Excellent communication skills", "Customer service experience preferred", "Basic computer skills", "Problem-solving abilities"],
+                benefits: ["Competitive salary", "Health insurance", "Paid time off", "Training programs", "Career advancement opportunities"]
+            },
+            {
+                id: 2,
+                title: "Sales Associate",
+                department: "Sales",
+                location: "Austin, TX",
+                type: "Full-time",
+                description: "Generate leads and support the sales team in achieving revenue targets.",
+                fullDescription: "Join our Sales team as a Sales Associate to generate leads and support our sales efforts. You'll research prospects, make outbound calls, schedule meetings, and assist account executives in closing deals with enterprise customers.",
+                requirements: ["Bachelor's degree preferred", "Strong communication skills", "Goal-oriented mindset", "Basic sales experience helpful", "Proficiency in Microsoft Office"],
+                benefits: ["Base salary plus commission", "Health benefits", "Sales training program", "Performance bonuses", "Career growth opportunities"]
+            },
+            {
+                id: 3,
+                title: "Marketing Coordinator",
+                department: "Marketing",
+                location: "New York, NY",
+                type: "Full-time",
+                description: "Support marketing campaigns and coordinate promotional activities.",
+                fullDescription: "We're looking for a Marketing Coordinator to support our marketing campaigns and coordinate promotional activities. You'll assist with content creation, event planning, social media management, and campaign execution to help promote BMC's solutions.",
+                requirements: ["Bachelor's degree in Marketing or related field", "Creative thinking and writing skills", "Social media experience", "Attention to detail", "Team collaboration skills"],
+                benefits: ["Competitive salary", "Creative project opportunities", "Health insurance", "Professional development", "Flexible work schedule"]
+            },
+            {
+                id: 4,
+                title: "Administrative Assistant",
+                department: "Operations",
+                location: "Houston, TX",
+                type: "Full-time",
+                description: "Provide administrative support to executives and manage office operations.",
+                fullDescription: "Join our Operations team as an Administrative Assistant to provide comprehensive administrative support to executives and manage daily office operations. You'll handle scheduling, correspondence, travel arrangements, and various administrative tasks.",
+                requirements: ["High school diploma required", "Strong organizational skills", "Proficiency in Microsoft Office", "Excellent communication abilities", "Attention to detail"],
+                benefits: ["Competitive salary", "Health benefits", "Paid vacation", "Professional development", "Supportive work environment"]
+            },
+            {
+                id: 5,
+                title: "Human Resources Specialist",
+                department: "Human Resources",
+                location: "Remote",
+                type: "Full-time",
+                description: "Support HR operations including recruitment, onboarding, and employee relations.",
+                fullDescription: "We're seeking an HR Specialist to support various HR operations including recruitment, onboarding, and employee relations. You'll assist with hiring processes, maintain employee records, and help create a positive workplace culture.",
+                requirements: ["Bachelor's degree in HR or related field", "Understanding of HR practices", "Strong interpersonal skills", "Confidentiality and discretion", "HRIS experience preferred"],
+                benefits: ["Competitive salary", "Comprehensive benefits", "HR certification support", "Work-life balance", "Professional growth"]
+            },
+            {
+                id: 6,
+                title: "Accounting Clerk",
+                department: "Finance",
+                location: "Chicago, IL",
+                type: "Full-time",
+                description: "Process financial transactions and maintain accurate accounting records.",
+                fullDescription: "Join our Finance team as an Accounting Clerk to process financial transactions and maintain accurate accounting records. You'll handle accounts payable/receivable, data entry, and assist with month-end closing procedures.",
+                requirements: ["Associate degree in Accounting preferred", "Basic accounting knowledge", "Attention to detail", "Excel proficiency", "Organizational skills"],
+                benefits: ["Competitive salary", "Health insurance", "Retirement plan", "Paid time off", "Accounting training opportunities"]
+            },
+            {
+                id: 7,
+                title: "Office Manager",
+                department: "Operations",
+                location: "San Francisco, CA",
+                type: "Full-time",
+                description: "Oversee daily office operations and coordinate administrative activities.",
+                fullDescription: "We're looking for an Office Manager to oversee daily office operations and coordinate administrative activities. You'll manage office supplies, coordinate meetings, supervise administrative staff, and ensure smooth office operations.",
+                requirements: ["Bachelor's degree preferred", "Management experience", "Strong leadership skills", "Excellent organizational abilities", "Multi-tasking capabilities"],
+                benefits: ["Management-level salary", "Leadership development", "Health benefits", "Flexible schedule", "Team management experience"]
+            },
+            {
+                id: 8,
+                title: "Data Entry Specialist",
+                department: "Operations",
+                location: "Remote",
+                type: "Full-time",
+                description: "Accurately input and maintain data in company systems and databases.",
+                fullDescription: "Join our Operations team as a Data Entry Specialist to accurately input and maintain data in company systems and databases. You'll ensure data quality, perform regular updates, and support various departments with data management needs.",
+                requirements: ["High school diploma required", "Fast and accurate typing skills", "Attention to detail", "Basic computer skills", "Ability to work independently"],
+                benefits: ["Competitive hourly wage", "Remote work flexibility", "Health insurance", "Paid breaks", "Skills development opportunities"]
+            },
+            {
+                id: 9,
+                title: "Receptionist",
+                department: "Operations",
+                location: "Austin, TX",
+                type: "Full-time",
+                description: "Greet visitors, answer phones, and provide front desk support.",
+                fullDescription: "We're seeking a friendly Receptionist to greet visitors, answer phones, and provide front desk support. You'll be the first point of contact for our company, managing calls, scheduling appointments, and assisting visitors with a professional demeanor.",
+                requirements: ["High school diploma", "Excellent communication skills", "Professional appearance", "Multi-line phone experience", "Customer service orientation"],
+                benefits: ["Competitive salary", "Health benefits", "Paid time off", "Professional development", "Friendly work environment"]
+            },
+            {
+                id: 10,
+                title: "Warehouse Associate",
+                department: "Operations",
+                location: "Denver, CO",
+                type: "Full-time",
+                description: "Handle inventory management, shipping, and receiving operations.",
+                fullDescription: "Join our Operations team as a Warehouse Associate to handle inventory management, shipping, and receiving operations. You'll process orders, maintain inventory accuracy, and ensure timely shipment of products to customers.",
+                requirements: ["High school diploma", "Physical ability to lift 50 lbs", "Attention to detail", "Basic math skills", "Teamwork abilities"],
+                benefits: ["Competitive hourly wage", "Health insurance", "Overtime opportunities", "Safety training", "Career advancement paths"]
+            },
+            {
+                id: 11,
+                title: "Event Coordinator",
+                department: "Marketing",
+                location: "Boston, MA",
+                type: "Full-time",
+                description: "Plan and execute corporate events, conferences, and promotional activities.",
+                fullDescription: "We're looking for an Event Coordinator to plan and execute corporate events, conferences, and promotional activities. You'll manage event logistics, coordinate with vendors, and ensure successful execution of company events.",
+                requirements: ["Bachelor's degree preferred", "Event planning experience", "Strong organizational skills", "Vendor management abilities", "Creative problem-solving"],
+                benefits: ["Competitive salary", "Event planning budget", "Travel opportunities", "Health benefits", "Creative project work"]
+            },
+            {
+                id: 12,
+                title: "Social Media Specialist",
+                department: "Marketing",
+                location: "Remote",
+                type: "Full-time",
+                description: "Manage social media accounts and create engaging content for online platforms.",
+                fullDescription: "Join our Marketing team as a Social Media Specialist to manage social media accounts and create engaging content for online platforms. You'll develop social media strategies, create posts, and engage with our online community.",
+                requirements: ["Bachelor's degree in Marketing or Communications", "Social media platform expertise", "Content creation skills", "Analytics knowledge", "Creative writing abilities"],
+                benefits: ["Competitive salary", "Social media tool access", "Creative freedom", "Health benefits", "Remote work flexibility"]
+            },
+            {
+                id: 13,
+                title: "Training Specialist",
+                department: "Human Resources",
+                location: "Seattle, WA",
+                type: "Full-time",
+                description: "Develop and deliver training programs for employees and customers.",
+                fullDescription: "We're seeking a Training Specialist to develop and deliver training programs for employees and customers. You'll create training materials, conduct workshops, and ensure effective knowledge transfer across the organization.",
+                requirements: ["Bachelor's degree in Education or related field", "Training or teaching experience", "Presentation skills", "Curriculum development abilities", "Patient and supportive nature"],
+                benefits: ["Competitive salary", "Training certification support", "Health benefits", "Professional development", "Impact on employee growth"]
+            },
+            {
+                id: 14,
+                title: "Quality Assurance Analyst",
+                department: "Operations",
+                location: "Atlanta, GA",
+                type: "Full-time",
+                description: "Review processes and ensure quality standards are met across operations.",
+                fullDescription: "Join our Operations team as a Quality Assurance Analyst to review processes and ensure quality standards are met across operations. You'll conduct audits, identify improvement opportunities, and help maintain high-quality service delivery.",
+                requirements: ["Bachelor's degree preferred", "Analytical thinking skills", "Attention to detail", "Process improvement knowledge", "Communication abilities"],
+                benefits: ["Competitive salary", "Quality certification opportunities", "Health benefits", "Process improvement training", "Career advancement"]
+            },
+            {
+                id: 15,
+                title: "Customer Success Coordinator",
+                department: "Support",
+                location: "Remote",
+                type: "Full-time",
+                description: "Support customer success initiatives and help clients achieve their goals.",
+                fullDescription: "We're looking for a Customer Success Coordinator to support customer success initiatives and help clients achieve their goals. You'll assist with onboarding, track customer health metrics, and coordinate renewal activities.",
+                requirements: ["Bachelor's degree preferred", "Customer service experience", "Strong communication skills", "Analytical abilities", "Relationship building skills"],
+                benefits: ["Competitive salary", "Customer success training", "Health benefits", "Remote work options", "Client interaction opportunities"]
+            },
+            {
+                id: 16,
+                title: "Procurement Specialist",
+                department: "Operations",
+                location: "Phoenix, AZ",
+                type: "Full-time",
+                description: "Manage vendor relationships and coordinate purchasing activities.",
+                fullDescription: "Join our Operations team as a Procurement Specialist to manage vendor relationships and coordinate purchasing activities. You'll negotiate contracts, evaluate suppliers, and ensure cost-effective procurement processes.",
+                requirements: ["Bachelor's degree in Business or related field", "Negotiation skills", "Vendor management experience", "Analytical abilities", "Contract review skills"],
+                benefits: ["Competitive salary", "Procurement certification support", "Health benefits", "Vendor relationship building", "Cost savings impact"]
+            },
+            {
+                id: 17,
+                title: "Content Writer",
+                department: "Marketing",
+                location: "Remote",
+                type: "Full-time",
+                description: "Create compelling written content for marketing materials and communications.",
+                fullDescription: "We're seeking a Content Writer to create compelling written content for marketing materials and communications. You'll write blog posts, website copy, email campaigns, and other marketing content that engages our audience.",
+                requirements: ["Bachelor's degree in English, Journalism, or Marketing", "Excellent writing skills", "SEO knowledge", "Research abilities", "Creative thinking"],
+                benefits: ["Competitive salary", "Writing tool stipend", "Creative projects", "Health benefits", "Remote work flexibility"]
+            },
+            {
+                id: 18,
+                title: "Project Coordinator",
+                department: "Operations",
+                location: "Miami, FL",
+                type: "Full-time",
+                description: "Coordinate project activities and support project managers in delivery.",
+                fullDescription: "Join our Operations team as a Project Coordinator to coordinate project activities and support project managers in delivery. You'll track project progress, schedule meetings, and ensure timely completion of project milestones.",
+                requirements: ["Bachelor's degree preferred", "Organizational skills", "Project management basics", "Communication abilities", "Time management skills"],
+                benefits: ["Competitive salary", "Project management training", "Health benefits", "Career development", "Cross-functional exposure"]
+            },
+            {
+                id: 19,
+                title: "Benefits Administrator",
+                department: "Human Resources",
+                location: "Dallas, TX",
+                type: "Full-time",
+                description: "Administer employee benefits programs and assist with enrollment processes.",
+                fullDescription: "We're looking for a Benefits Administrator to administer employee benefits programs and assist with enrollment processes. You'll manage benefits communications, resolve employee inquiries, and coordinate with benefits providers.",
+                requirements: ["Bachelor's degree in HR or related field", "Benefits administration experience", "Attention to detail", "HRIS knowledge", "Employee service orientation"],
+                benefits: ["Competitive salary", "Comprehensive benefits package", "HR certification support", "Health benefits", "Employee impact"]
+            },
+            {
+                id: 20,
+                title: "Facilities Coordinator",
+                department: "Operations",
+                location: "Portland, OR",
+                type: "Full-time",
+                description: "Manage office facilities, maintenance, and workplace services.",
+                fullDescription: "Join our Operations team as a Facilities Coordinator to manage office facilities, maintenance, and workplace services. You'll coordinate repairs, manage vendor relationships, and ensure a safe and comfortable work environment.",
+                requirements: ["High school diploma required", "Facilities management experience", "Vendor coordination skills", "Problem-solving abilities", "Safety awareness"],
+                benefits: ["Competitive salary", "Facilities management training", "Health benefits", "Hands-on work environment", "Problem-solving opportunities"]
+            },
+            {
+                id: 21,
+                title: "Travel Coordinator",
+                department: "Operations",
+                location: "Remote",
+                type: "Full-time",
+                description: "Coordinate business travel arrangements and manage travel policies.",
+                fullDescription: "We're seeking a Travel Coordinator to coordinate business travel arrangements and manage travel policies. You'll book flights, hotels, and transportation while ensuring compliance with company travel guidelines.",
+                requirements: ["High school diploma required", "Travel booking experience", "Attention to detail", "Customer service skills", "Travel industry knowledge"],
+                benefits: ["Competitive salary", "Travel industry perks", "Health benefits", "Remote work flexibility", "Travel planning expertise"]
+            },
+            {
+                id: 22,
+                title: "Payroll Specialist",
+                department: "Finance",
+                location: "Nashville, TN",
+                type: "Full-time",
+                description: "Process payroll and ensure accurate compensation for all employees.",
+                fullDescription: "Join our Finance team as a Payroll Specialist to process payroll and ensure accurate compensation for all employees. You'll manage payroll systems, calculate wages, and ensure compliance with tax regulations.",
+                requirements: ["Associate degree in Accounting preferred", "Payroll processing experience", "Attention to detail", "Confidentiality", "Payroll software knowledge"],
+                benefits: ["Competitive salary", "Payroll certification support", "Health benefits", "Retirement plan", "Stable work environment"]
+            },
+            {
+                id: 23,
+                title: "Inventory Specialist",
+                department: "Operations",
+                location: "Las Vegas, NV",
+                type: "Full-time",
+                description: "Manage inventory levels and coordinate stock replenishment activities.",
+                fullDescription: "We're looking for an Inventory Specialist to manage inventory levels and coordinate stock replenishment activities. You'll track inventory movements, conduct cycle counts, and optimize inventory management processes.",
+                requirements: ["High school diploma required", "Inventory management experience", "Analytical skills", "Attention to detail", "Computer proficiency"],
+                benefits: ["Competitive salary", "Inventory management training", "Health benefits", "Process improvement opportunities", "Career advancement"]
+            },
+            {
+                id: 24,
+                title: "Communications Specialist",
+                department: "Marketing",
+                location: "Washington, DC",
+                type: "Full-time",
+                description: "Develop internal and external communications to support business objectives.",
+                fullDescription: "Join our Marketing team as a Communications Specialist to develop internal and external communications to support business objectives. You'll create newsletters, press releases, and internal communications that keep stakeholders informed.",
+                requirements: ["Bachelor's degree in Communications or related field", "Excellent writing skills", "Public relations knowledge", "Media relations experience", "Strategic thinking"],
+                benefits: ["Competitive salary", "Communications training", "Health benefits", "Media interaction opportunities", "Strategic impact"]
+            },
+            {
+                id: 25,
+                title: "Customer Onboarding Specialist",
+                department: "Support",
+                location: "Remote",
+                type: "Full-time",
+                description: "Guide new customers through the onboarding process and initial setup.",
+                fullDescription: "We're seeking a Customer Onboarding Specialist to guide new customers through the onboarding process and initial setup. You'll conduct welcome calls, provide training, and ensure customers have a smooth start with our products.",
+                requirements: ["Bachelor's degree preferred", "Customer service experience", "Training abilities", "Patience and empathy", "Technical aptitude"],
+                benefits: ["Competitive salary", "Customer success training", "Health benefits", "Remote work options", "Customer impact"]
+            },
+            {
+                id: 26,
+                title: "Compliance Coordinator",
+                department: "Legal",
+                location: "Austin, TX",
+                type: "Full-time",
+                description: "Support compliance initiatives and help maintain regulatory standards.",
+                fullDescription: "Join our Legal team as a Compliance Coordinator to support compliance initiatives and help maintain regulatory standards. You'll assist with audits, maintain compliance documentation, and ensure adherence to regulations.",
+                requirements: ["Bachelor's degree preferred", "Attention to detail", "Regulatory knowledge helpful", "Documentation skills", "Analytical thinking"],
+                benefits: ["Competitive salary", "Compliance training", "Health benefits", "Professional development", "Regulatory expertise"]
+            },
+            {
+                id: 27,
+                title: "Sales Support Specialist",
+                department: "Sales",
+                location: "Tampa, FL",
+                type: "Full-time",
+                description: "Provide administrative and operational support to the sales team.",
+                fullDescription: "We're looking for a Sales Support Specialist to provide administrative and operational support to the sales team. You'll prepare proposals, maintain CRM data, and assist with sales processes to help the team achieve targets.",
+                requirements: ["Bachelor's degree preferred", "Sales support experience", "CRM knowledge", "Organizational skills", "Team collaboration"],
+                benefits: ["Competitive salary", "Sales training exposure", "Health benefits", "Team environment", "Sales process learning"]
+            },
+            {
+                id: 28,
+                title: "Learning and Development Coordinator",
+                department: "Human Resources",
+                location: "San Diego, CA",
+                type: "Full-time",
+                description: "Coordinate employee training programs and professional development initiatives.",
+                fullDescription: "Join our HR team as a Learning and Development Coordinator to coordinate employee training programs and professional development initiatives. You'll schedule training sessions, track completion, and support employee growth.",
+                requirements: ["Bachelor's degree in HR or Education", "Training coordination experience", "Learning management systems knowledge", "Communication skills", "Employee development passion"],
+                benefits: ["Competitive salary", "L&D certification support", "Health benefits", "Professional growth", "Employee impact"]
+            },
+            {
+                id: 29,
+                title: "Vendor Relations Specialist",
+                department: "Operations",
+                location: "Minneapolis, MN",
+                type: "Full-time",
+                description: "Manage vendor relationships and coordinate supplier activities.",
+                fullDescription: "We're seeking a Vendor Relations Specialist to manage vendor relationships and coordinate supplier activities. You'll evaluate vendor performance, negotiate terms, and ensure quality service delivery from external partners.",
+                requirements: ["Bachelor's degree in Business preferred", "Vendor management experience", "Negotiation skills", "Relationship building abilities", "Contract review knowledge"],
+                benefits: ["Competitive salary", "Vendor management training", "Health benefits", "Relationship building", "Business impact"]
+            },
+            {
+                id: 30,
+                title: "Document Control Specialist",
+                department: "Operations",
+                location: "Salt Lake City, UT",
+                type: "Full-time",
+                description: "Manage document control processes and maintain accurate records.",
+                fullDescription: "Join our Operations team as a Document Control Specialist to manage document control processes and maintain accurate records. You'll organize documents, ensure version control, and support document management systems.",
+                requirements: ["Associate degree preferred", "Document management experience", "Attention to detail", "Organizational skills", "Computer proficiency"],
+                benefits: ["Competitive salary", "Document management training", "Health benefits", "Process improvement", "Organizational impact"]
+            },
+            {
+                id: 31,
+                title: "Customer Billing Specialist",
+                department: "Finance",
+                location: "Remote",
+                type: "Full-time",
+                description: "Process customer billing and resolve billing inquiries.",
+                fullDescription: "We're looking for a Customer Billing Specialist to process customer billing and resolve billing inquiries. You'll generate invoices, handle payment processing, and work with customers to resolve billing issues.",
+                requirements: ["High school diploma required", "Billing experience preferred", "Customer service skills", "Attention to detail", "Math skills"],
+                benefits: ["Competitive salary", "Billing system training", "Health benefits", "Remote work flexibility", "Customer interaction"]
+            },
+            {
+                id: 32,
+                title: "Market Research Analyst",
+                department: "Marketing",
+                location: "Charlotte, NC",
+                type: "Full-time",
+                description: "Conduct market research and analyze industry trends to support business decisions.",
+                fullDescription: "Join our Marketing team as a Market Research Analyst to conduct market research and analyze industry trends to support business decisions. You'll gather competitive intelligence, analyze market data, and provide insights to leadership.",
+                requirements: ["Bachelor's degree in Marketing or Business", "Research experience", "Analytical skills", "Data analysis abilities", "Report writing skills"],
+                benefits: ["Competitive salary", "Research tool access", "Health benefits", "Market insights exposure", "Strategic impact"]
+            },
+            {
+                id: 33,
+                title: "Employee Relations Specialist",
+                department: "Human Resources",
+                location: "Kansas City, MO",
+                type: "Full-time",
+                description: "Handle employee relations matters and support workplace conflict resolution.",
+                fullDescription: "We're seeking an Employee Relations Specialist to handle employee relations matters and support workplace conflict resolution. You'll investigate complaints, mediate disputes, and help maintain positive employee relationships.",
+                requirements: ["Bachelor's degree in HR or related field", "Employee relations experience", "Conflict resolution skills", "Confidentiality", "Interpersonal abilities"],
+                benefits: ["Competitive salary", "HR certification support", "Health benefits", "Mediation training", "Employee impact"]
+            },
+            {
+                id: 34,
+                title: "Business Operations Analyst",
+                department: "Operations",
+                location: "Indianapolis, IN",
+                type: "Full-time",
+                description: "Analyze business operations and identify opportunities for improvement.",
+                fullDescription: "Join our Operations team as a Business Operations Analyst to analyze business operations and identify opportunities for improvement. You'll review processes, analyze data, and recommend solutions to enhance efficiency.",
+                requirements: ["Bachelor's degree in Business or related field", "Analytical skills", "Process improvement knowledge", "Data analysis abilities", "Problem-solving skills"],
+                benefits: ["Competitive salary", "Business analysis training", "Health benefits", "Process improvement impact", "Career development"]
+            },
+            {
+                id: 35,
+                title: "Client Relations Manager",
+                department: "Support",
+                location: "Richmond, VA",
+                type: "Full-time",
+                description: "Build and maintain strong relationships with key client accounts.",
+                fullDescription: "We're looking for a Client Relations Manager to build and maintain strong relationships with key client accounts. You'll serve as the primary point of contact, address client needs, and ensure high levels of customer satisfaction.",
+                requirements: ["Bachelor's degree preferred", "Account management experience", "Relationship building skills", "Communication abilities", "Customer service orientation"],
+                benefits: ["Competitive salary and bonus", "Client relationship training", "Health benefits", "Travel opportunities", "Client impact"]
+            },
+            {
+                id: 36,
+                title: "Executive Assistant",
+                department: "Operations",
+                location: "San Antonio, TX",
+                type: "Full-time",
+                description: "Provide high-level administrative support to executive leadership.",
+                fullDescription: "Join our Operations team as an Executive Assistant to provide high-level administrative support to executive leadership. You'll manage calendars, coordinate meetings, handle correspondence, and support strategic initiatives.",
+                requirements: ["Bachelor's degree preferred", "Executive support experience", "Discretion and confidentiality", "Excellent communication skills", "Advanced computer skills"],
+                benefits: ["Competitive salary", "Executive exposure", "Health benefits", "Professional development", "Leadership interaction"]
+            }
+        ];
+
+        function loadJobDetail() {
+            const jobId = localStorage.getItem('selectedJobId');
+            if (!jobId) {
+                window.location.href = 'careers.html';
+                return;
+            }
+
+            const job = jobsData.find(j => j.id == jobId);
+            if (!job) {
+                window.location.href = 'careers.html';
+                return;
+            }
+
+            const departmentColors = {
+                'Engineering': 'bg-blue-100 text-blue-800', 'Product': 'bg-green-100 text-green-800',
+                'Sales': 'bg-purple-100 text-purple-800', 'Design': 'bg-orange-100 text-orange-800',
+                'Marketing': 'bg-red-100 text-red-800', 'Support': 'bg-indigo-100 text-indigo-800',
+                'Human Resources': 'bg-pink-100 text-pink-800', 'Finance': 'bg-yellow-100 text-yellow-800',
+                'Legal': 'bg-gray-100 text-gray-800', 'Operations': 'bg-teal-100 text-teal-800'
+            };
+
+            const jobDetailContainer = document.getElementById('job-detail-container');
+            jobDetailContainer.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-sm font-medium ${departmentColors[job.department] || 'bg-gray-100 text-gray-800'}">${job.department}</span>
+                        <div class="text-right">
+                            <span class="text-gray-600 text-sm">${job.location}</span>
+                            <span class="text-gray-400 mx-2">•</span>
+                            <span class="text-gray-600 text-sm">${job.type}</span>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">${job.title}</h1>
+                    <p class="text-xl text-gray-600">${job.description}</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-3">
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">About This Role</h2>
+                            <p class="text-gray-700 leading-relaxed">${job.fullDescription}</p>
+                        </div>
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Requirements</h2>
+                            <ul class="space-y-2">${job.requirements.map(req => `<li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-gray-700">${req}</span></li>`).join('')}</ul>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Benefits & Perks</h2>
+                            <ul class="space-y-2">${job.benefits.map(benefit => `<li class="flex items-start"><svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span class="text-gray-700">${benefit}</span></li>`).join('')}</ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // ▼▼▼ NEW: INJECT THE APPLICATION FORM ▼▼▼
+            const formContainer = document.getElementById('application-form-container');
+            formContainer.innerHTML = `
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Apply for this position</h2>
+                    <p class="text-gray-600 mb-4">Please fill out the form below to submit your application.</p>
+                    <p class="text-sm text-red-600 mb-8 font-medium">NOTE: This form should be filled with capital letters throughout</p>
+                    
+                    <form action="" method="POST" class="space-y-8" onsubmit="handleFormSubmit(event)">
+                        
+                        <input type="hidden" name="Applying for Job" value="${job.title}">
+
+                        <!-- Enhanced personal details section with all employment form fields -->
+                        <fieldset class="border-t border-gray-200 pt-6">
+                            <legend class="text-lg font-semibold text-gray-900 mb-6">Personal Details</legend>
+                            <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                                    <input type="text" name="first-name" id="first-name" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="middle-name" class="block text-sm font-medium text-gray-700">Middle Name</label>
+                                    <input type="text" name="middle-name" id="middle-name" 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                                    <input type="text" name="last-name" id="last-name" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth (DD/MM/YYYY) *</label>
+                                    <input type="date" name="dob" id="dob" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Sex *</label>
+                                    <div class="flex space-x-4">
+                                        <label class="flex items-center">
+                                            <input type="radio" name="sex" value="MALE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <span class="ml-2 text-sm text-gray-700">Male</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="sex" value="FEMALE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <span class="ml-2 text-sm text-gray-700">Female</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Marital Status *</label>
+                                    <div class="flex flex-wrap gap-4">
+                                        <label class="flex items-center">
+                                            <input type="radio" name="marital-status" value="SINGLE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <span class="ml-2 text-sm text-gray-700">Single</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="marital-status" value="MARRIED" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <span class="ml-2 text-sm text-gray-700">Married</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="marital-status" value="DIVORCED" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <span class="ml-2 text-sm text-gray-700">Divorced</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Enhanced contact details section -->
+                        <fieldset class="border-t border-gray-200 pt-6">
+                            <legend class="text-lg font-semibold text-gray-900 mb-6">Contact Details</legend>
+                            <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
+                                <div class="sm:col-span-2">
+                                    <label for="address" class="block text-sm font-medium text-gray-700">Contact Address *</label>
+                                    <input type="text" name="address" id="address" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="city" class="block text-sm font-medium text-gray-700">City *</label>
+                                    <input type="text" name="city" id="city" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="state" class="block text-sm font-medium text-gray-700">State *</label>
+                                    <input type="text" name="state" id="state" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="postal-code" class="block text-sm font-medium text-gray-700">Postal Code *</label>
+                                    <input type="text" name="postal-code" id="postal-code" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="country" class="block text-sm font-medium text-gray-700">Country *</label>
+                                    <input type="text" name="country" id="country" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                                    <input type="email" name="email" id="email" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                                    <input type="tel" name="phone" id="phone" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="alt-phone" class="block text-sm font-medium text-gray-700">Alternative Phone Number</label>
+                                    <input type="tel" name="alt-phone" id="alt-phone" 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Added payment details section -->
+                        <fieldset class="border-t border-gray-200 pt-6">
+                            <legend class="text-lg font-semibold text-gray-900 mb-6">Payment Details</legend>
+                            <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
+                                <div class="sm:col-span-2">
+                                    <label for="bank-name" class="block text-sm font-medium text-gray-700">Bank Name *</label>
+                                    <input type="text" name="bank-name" id="bank-name" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="bank-address" class="block text-sm font-medium text-gray-700">Bank Address *</label>
+                                    <input type="text" name="bank-address" id="bank-address" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="account-name" class="block text-sm font-medium text-gray-700">Account Name *</label>
+                                    <input type="text" name="account-name" id="account-name" required 
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div>
+                                    <label for="ssn" class="block text-sm font-medium text-gray-700">SSN *</label>
+                                    <input type="text" name="ssn" id="ssn" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" placeholder="XXX-XX-XXXX"
+                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Enhanced attestation section with signature -->
+                        <fieldset class="border-t border-gray-200 pt-6">
+                            <legend class="text-lg font-semibold text-gray-900 mb-6">Attestation</legend>
+                            <div class="space-y-6">
+                                <div class="bg-gray-50 p-4 rounded-md">
+                                    <p class="text-sm text-gray-700 mb-4">
+                                        I, <input type="text" name="attestation-name" id="attestation-name" required 
+                                                  class="inline-block w-48 mx-1 px-2 py-1 border-b border-gray-400 bg-transparent focus:outline-none focus:border-blue-500 uppercase"
+                                                  style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()" placeholder="FULL NAME">, 
+                                        hereby verify that the above information given by me is correct and if found otherwise, any drastic action can be taken against me.
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
+                                    <div>
+                                        <label for="signature" class="block text-sm font-medium text-gray-700">Digital Signature *</label>
+                                        <input type="text" name="signature" id="signature" required placeholder="Type your full name as signature"
+                                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                               style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                    </div>
+                                    <div>
+                                        <label for="signature-date" class="block text-sm font-medium text-gray-700">Date *</label>
+                                        <input type="date" name="signature-date" id="signature-date" required 
+                                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                                <div class="relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                        <input id="attestation-checkbox" name="attestation-checkbox" type="checkbox" required 
+                                               class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="attestation-checkbox" class="font-medium text-gray-700">I confirm the attestation above *</label>
+                                        <p class="text-gray-500">Check this box to confirm that you agree with the attestation statement.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                      
+
+                        <div class="pt-6">
+                            <button type="submit" class="w-full justify-center rounded-md border border-transparent bg-blue-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
+                                Submit Employment Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            `;
+
+
+            // Update page title
+            document.title = `${job.title} - BMC Careers`;
+        }
+
+        function goBack() {
+            window.location.href = 'careers.html';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // Basic validation
+            if (!data['attestation-checkbox']) {
+                alert('Please confirm the attestation by checking the checkbox.');
+                return;
+            }
+
+            // Show success message
+            alert('Application submitted successfully! We will review your application and contact you soon.');
+
+            // Here you would typically send the data to your server
+            console.log('Form data:', data);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadJobDetail);
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
