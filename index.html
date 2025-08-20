@@ -60,16 +60,16 @@
     <!-- Hero Section with Background Video -->
     <section class="relative min-h-[80vh]  flex items-center justify-left px-12 overflow-hidden">
         <!-- Background Video -->
-        <video autoplay muted loop class="absolute inset-0 w-full h-[80vh] hero-video z-0 object-fill"
-            poster="/placeholder.svg?height=1080&width=1920">
-            <source src="./images/videoplayback (1).mp4" type="video/mp4">
-            <!-- Fallback background image -->
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900"></div>
-        </video>
+        <div class="absolute inset-0 w-full h-[80vh]">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-fill z-0"
+                poster="./images/Screenshot 2025-08-20 111220.png">
+                <source src="./images/videoplayback (1).mp4" type="video/mp4">
+            </video>
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 -z-1"></div>
+        </div>
 
 
-        <!-- Video Overlay -->
-        <!-- <div class="absolute inset-0 video-overlay z-10"></div> -->
 
         <!-- Hero Content -->
         <div class="relative  z-20 text-left max-w-4xl  px-1 sm:px-6 lg:px-2">
@@ -287,14 +287,6 @@
                 </p>
             </div>
 
-            <!-- Video/Media Section -->
-            <div class="bg-black rounded-lg overflow-hidden aspect-video relative">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <video loop autoplay muted>
-                        <source src="./images/videoplayback (1).mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -374,59 +366,69 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- BMC Point-of-View Card -->
-                    <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-shadow">
                         <div class="aspect-video bg-gray-100 mb-4 rounded-lg overflow-hidden">
                             <img src="./images/man.png" alt="Professional businessman"
                                 class="w-full h-full object-cover">
                         </div>
-                        <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
-                            BMC Point-of View
+                        <div class="p-4">
+                            <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
+                                BMC Point-of View
+                            </div>
+                            <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
+                                Simplified mainframe management
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Discover how Gen AI services delivered by a cloud-native platform will help you
+                                transform
+                                your mainframe for the next generation. Read our statement of direction for the BMC AMI
+                                Platform.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
-                            Simplified mainframe management
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Discover how Gen AI services delivered by a cloud-native platform will help you transform
-                            your mainframe for the next generation. Read our statement of direction for the BMC AMI
-                            Platform.
-                        </p>
                     </div>
 
                     <!-- Product Release Card -->
-                    <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-shadow">
                         <div class="aspect-video bg-gray-900 mb-4 rounded-lg overflow-hidden">
                             <img src="./images/product.png" alt="Space planet with bright light"
                                 class="w-full h-full object-cover">
                         </div>
-                        <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
-                            Product Release
+                        <div class="p-4">
+                            <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
+                                Product Release
+                            </div>
+                            <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
+                                Discover what is New in the BMC AMI Portfolio
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                From a new approach to secondary data storage to inclusion of artificial intelligence
+                                (AI)
+                                that enhances productivity and efficiency, BMC AMI's January 2025 release breaks new
+                                ground
+                                in enabling what's possible on the mainframe.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
-                            Discover what is New in the BMC AMI Portfolio
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            From a new approach to secondary data storage to inclusion of artificial intelligence (AI)
-                            that enhances productivity and efficiency, BMC AMI's January 2025 release breaks new ground
-                            in enabling what's possible on the mainframe.
-                        </p>
                     </div>
 
                     <!-- Customer Success Webinar Card -->
-                    <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-shadow">
                         <div class="aspect-video bg-gray-900 mb-4 rounded-lg overflow-hidden">
                             <img src="./images/customer.png" alt="Space planet with bright light"
                                 class="w-full h-full object-cover">
                         </div>
-                        <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
-                            Customer Success Webinar
+                        <div class="p-4">
+                            <div class="text-sm font-semibold text-bmc-blue tracking-wider uppercase mb-3">
+                                Customer Success Webinar
+                            </div>
+                            <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
+                                First Citizens Bank: Scaling Seamlessly with Control-M
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Watch our webinar and learn how First Citizens Bank scaled rapidly to support its
+                                expansion
+                                with Control-M's application workflow orchestration.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-bmc-dark mb-4 leading-tight">
-                            First Citizens Bank: Scaling Seamlessly with Control-M
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Watch our webinar and learn how First Citizens Bank scaled rapidly to support its expansion
-                            with Control-M's application workflow orchestration.
-                        </p>
                     </div>
                 </div>
             </div>
