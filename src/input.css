@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@theme {
+  --color-bmc-red: #e31e24;
+  --color-bmc-blue: #0066cc;
+  --color-dark-bg: #0a0a0a;
+  --color-card-bg: #1a1a1a;
+}
