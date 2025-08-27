@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/bmc.png" type="image/x-icon" class="rounded-full">
-    <title>Job Details - BMC</title>
+    <link rel="shortcut icon" href="./images/blc.png" type="image/x-icon" class="rounded-full">
+    <title>Job Details - BLC</title>
 </head>
 
 <body class="bg-gray-50">
@@ -15,7 +15,8 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="index.html">
-                        <div class="text-red-500 font-bold text-2xl"><img src="./images/bmc.png" alt="logo"></div>
+                        <div class="text-red-500 font-bold text-2xl"><img src="./images/blc.png" alt="logo"
+                                class="w-25"></div>
                     </a>
                 </div>
 
@@ -80,14 +81,19 @@
     <footer class="bg-gray-900/95 py-6 mt-16">
         <div class="container mx-auto px-6">
             <p class="text-white text-sm leading-relaxed text-center">
-                © Copyright 2005-2025 BMC Software, Inc. Use of this site signifies your acceptance of BMC's Terms of
-                Use. BMC, the BMC logo, and other BMC marks are assets of BMC Software, Inc. These trademarks are
+                © Copyright 2005-2025 BLC Software, Inc. Use of this site signifies your acceptance of BLC's Terms of
+                Use. BLC, the BLC logo, and other BLC marks are assets of BLC Software, Inc. These trademarks are
                 registered and may be registered in the U.S. and in other countries.
             </p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+        (function () {
+            emailjs.init("WugqMMmr5Zh-h55jk");
+        })();
+
         const jobsData = [
             {
                 id: 1,
@@ -102,388 +108,223 @@
             },
             {
                 id: 2,
-                title: "Sales Associate",
-                department: "Sales",
-                location: "Austin, TX",
+                title: "Receptionist",
+                department: "Administration",
+                location: "New York, NY",
                 type: "Full-time",
-                description: "Generate leads and support the sales team in achieving revenue targets.",
-                fullDescription: "Join our Sales team as a Sales Associate to generate leads and support our sales efforts. You'll research prospects, make outbound calls, schedule meetings, and assist account executives in closing deals with enterprise customers.",
-                requirements: ["Bachelor's degree preferred", "Strong communication skills", "Goal-oriented mindset", "Basic sales experience helpful", "Proficiency in Microsoft Office"],
-                benefits: ["Base salary plus commission", "Health benefits", "Sales training program", "Performance bonuses", "Career growth opportunities"]
+                description: "Serve as the first point of contact for office visitors and assist with administrative tasks.",
+                fullDescription: "We are looking for a professional Receptionist to manage our front desk, handle phone calls, greet clients, and support daily office operations. The role requires excellent communication skills and a friendly demeanor.",
+                requirements: ["High school diploma", "Professional phone etiquette", "Basic computer literacy", "Strong interpersonal skills"],
+                benefits: ["Health and dental insurance", "Paid time off", "401(k) plan", "Employee wellness programs"]
             },
             {
                 id: 3,
-                title: "Marketing Coordinator",
-                department: "Marketing",
-                location: "New York, NY",
+                title: "Travel Coordinator",
+                department: "Administration",
+                location: "Chicago, IL",
                 type: "Full-time",
-                description: "Support marketing campaigns and coordinate promotional activities.",
-                fullDescription: "We're looking for a Marketing Coordinator to support our marketing campaigns and coordinate promotional activities. You'll assist with content creation, event planning, social media management, and campaign execution to help promote BMC's solutions.",
-                requirements: ["Bachelor's degree in Marketing or related field", "Creative thinking and writing skills", "Social media experience", "Attention to detail", "Team collaboration skills"],
-                benefits: ["Competitive salary", "Creative project opportunities", "Health insurance", "Professional development", "Flexible work schedule"]
+                description: "Arrange and coordinate travel schedules, accommodations, and itineraries for staff.",
+                fullDescription: "Seeking a Travel Coordinator to organize flights, hotels, and logistics for employees. You’ll ensure cost-effective travel arrangements and handle last-minute changes efficiently.",
+                requirements: ["Associate’s degree preferred", "Organizational skills", "Experience with travel booking tools", "Attention to detail"],
+                benefits: ["Travel discounts", "Health benefits", "Paid vacation", "Professional development support"]
             },
             {
                 id: 4,
-                title: "Administrative Assistant",
-                department: "Operations",
-                location: "Houston, TX",
-                type: "Full-time",
-                description: "Provide administrative support to executives and manage office operations.",
-                fullDescription: "Join our Operations team as an Administrative Assistant to provide comprehensive administrative support to executives and manage daily office operations. You'll handle scheduling, correspondence, travel arrangements, and various administrative tasks.",
-                requirements: ["High school diploma required", "Strong organizational skills", "Proficiency in Microsoft Office", "Excellent communication abilities", "Attention to detail"],
-                benefits: ["Competitive salary", "Health benefits", "Paid vacation", "Professional development", "Supportive work environment"]
+                title: "Office Assistant",
+                department: "Administration",
+                location: "Atlanta, GA",
+                type: "Hybrid",
+                description: "Provide administrative support to ensure smooth daily office operations.",
+                fullDescription: "We are hiring an Office Assistant to perform clerical tasks, manage office supplies, and assist with scheduling. This is a hybrid role requiring part-time office presence.",
+                requirements: ["Strong communication skills", "Basic MS Office knowledge", "Organized and detail-oriented"],
+                benefits: ["Flexible work schedule", "Health and dental coverage", "Paid holidays"]
             },
             {
                 id: 5,
-                title: "Human Resources Specialist",
-                department: "Human Resources",
-                location: "Remote",
+                title: "Delivery Driver",
+                department: "Logistics",
+                location: "Dallas, TX",
                 type: "Full-time",
-                description: "Support HR operations including recruitment, onboarding, and employee relations.",
-                fullDescription: "We're seeking an HR Specialist to support various HR operations including recruitment, onboarding, and employee relations. You'll assist with hiring processes, maintain employee records, and help create a positive workplace culture.",
-                requirements: ["Bachelor's degree in HR or related field", "Understanding of HR practices", "Strong interpersonal skills", "Confidentiality and discretion", "HRIS experience preferred"],
-                benefits: ["Competitive salary", "Comprehensive benefits", "HR certification support", "Work-life balance", "Professional growth"]
+                description: "Safely deliver packages to customers while ensuring timely service.",
+                fullDescription: "We are hiring a Delivery Driver to join our logistics team. You will be responsible for transporting goods, ensuring on-time deliveries, and maintaining excellent customer service during drop-offs. Company vehicle and fuel will be provided.",
+                requirements: ["Valid driver’s license", "Clean driving record", "Ability to lift up to 50 lbs", "Time management skills"],
+                benefits: ["Company vehicle", "Fuel covered", "Health insurance", "Overtime pay"]
             },
             {
                 id: 6,
-                title: "Accounting Clerk",
-                department: "Finance",
-                location: "Chicago, IL",
+                title: "Truck Driver",
+                department: "Logistics",
+                location: "Houston, TX",
                 type: "Full-time",
-                description: "Process financial transactions and maintain accurate accounting records.",
-                fullDescription: "Join our Finance team as an Accounting Clerk to process financial transactions and maintain accurate accounting records. You'll handle accounts payable/receivable, data entry, and assist with month-end closing procedures.",
-                requirements: ["Associate degree in Accounting preferred", "Basic accounting knowledge", "Attention to detail", "Excel proficiency", "Organizational skills"],
-                benefits: ["Competitive salary", "Health insurance", "Retirement plan", "Paid time off", "Accounting training opportunities"]
+                description: "Transport goods across regional and interstate routes safely and efficiently.",
+                fullDescription: "Join our logistics team as a Truck Driver. You’ll be responsible for driving long-haul routes, ensuring timely deliveries, and following all safety guidelines.",
+                requirements: ["Commercial driver’s license (CDL)", "2+ years of driving experience", "Strong safety record"],
+                benefits: ["Mileage pay", "Health and dental insurance", "401(k)", "Paid vacation"]
             },
             {
                 id: 7,
-                title: "Office Manager",
-                department: "Operations",
-                location: "San Francisco, CA",
+                title: "Company Driver",
+                department: "Transportation",
+                location: "Los Angeles, CA",
                 type: "Full-time",
-                description: "Oversee daily office operations and coordinate administrative activities.",
-                fullDescription: "We're looking for an Office Manager to oversee daily office operations and coordinate administrative activities. You'll manage office supplies, coordinate meetings, supervise administrative staff, and ensure smooth office operations.",
-                requirements: ["Bachelor's degree preferred", "Management experience", "Strong leadership skills", "Excellent organizational abilities", "Multi-tasking capabilities"],
-                benefits: ["Management-level salary", "Leadership development", "Health benefits", "Flexible schedule", "Team management experience"]
+                description: "Transport company staff and clients safely to various destinations.",
+                fullDescription: "We are looking for a reliable Company Driver to provide transportation services for employees and clients. This role requires excellent driving skills and professionalism.",
+                requirements: ["Valid driver’s license", "Clean driving history", "Professional appearance", "Punctuality"],
+                benefits: ["Steady salary", "Health insurance", "Fuel allowance", "Paid time off"]
             },
             {
                 id: 8,
-                title: "Data Entry Specialist",
-                department: "Operations",
-                location: "Remote",
+                title: "Security Guard",
+                department: "Security",
+                location: "Miami, FL",
                 type: "Full-time",
-                description: "Accurately input and maintain data in company systems and databases.",
-                fullDescription: "Join our Operations team as a Data Entry Specialist to accurately input and maintain data in company systems and databases. You'll ensure data quality, perform regular updates, and support various departments with data management needs.",
-                requirements: ["High school diploma required", "Fast and accurate typing skills", "Attention to detail", "Basic computer skills", "Ability to work independently"],
-                benefits: ["Competitive hourly wage", "Remote work flexibility", "Health insurance", "Paid breaks", "Skills development opportunities"]
+                description: "Ensure safety and protection of property, staff, and visitors.",
+                fullDescription: "We are seeking a Security Guard to monitor premises, patrol facilities, and handle security incidents professionally. Training will be provided.",
+                requirements: ["High school diploma", "Security license preferred", "Ability to work night shifts", "Strong observational skills"],
+                benefits: ["Uniform provided", "Health insurance", "Overtime pay", "Job stability"]
             },
             {
                 id: 9,
-                title: "Receptionist",
-                department: "Operations",
-                location: "Austin, TX",
-                type: "Full-time",
-                description: "Greet visitors, answer phones, and provide front desk support.",
-                fullDescription: "We're seeking a friendly Receptionist to greet visitors, answer phones, and provide front desk support. You'll be the first point of contact for our company, managing calls, scheduling appointments, and assisting visitors with a professional demeanor.",
-                requirements: ["High school diploma", "Excellent communication skills", "Professional appearance", "Multi-line phone experience", "Customer service orientation"],
-                benefits: ["Competitive salary", "Health benefits", "Paid time off", "Professional development", "Friendly work environment"]
+                title: "Janitor",
+                department: "Facilities",
+                location: "Chicago, IL",
+                type: "Part-time",
+                description: "Maintain cleanliness and sanitation across office facilities.",
+                fullDescription: "We are hiring a Janitor to ensure office and common areas are clean, stocked, and safe. Responsibilities include sweeping, mopping, and handling waste disposal.",
+                requirements: ["Previous cleaning experience", "Physical stamina", "Reliability"],
+                benefits: ["Flexible schedule", "Health coverage for full-time", "Paid sick days"]
             },
             {
                 id: 10,
-                title: "Warehouse Associate",
-                department: "Operations",
-                location: "Denver, CO",
+                title: "Maintenance Technician",
+                department: "Facilities",
+                location: "Phoenix, AZ",
                 type: "Full-time",
-                description: "Handle inventory management, shipping, and receiving operations.",
-                fullDescription: "Join our Operations team as a Warehouse Associate to handle inventory management, shipping, and receiving operations. You'll process orders, maintain inventory accuracy, and ensure timely shipment of products to customers.",
-                requirements: ["High school diploma", "Physical ability to lift 50 lbs", "Attention to detail", "Basic math skills", "Teamwork abilities"],
-                benefits: ["Competitive hourly wage", "Health insurance", "Overtime opportunities", "Safety training", "Career advancement paths"]
+                description: "Perform routine maintenance and repairs on company equipment and facilities.",
+                fullDescription: "We need a Maintenance Technician to handle general repairs, equipment servicing, and facility upkeep. Knowledge of electrical and plumbing systems is a plus.",
+                requirements: ["Technical training or certification", "Handyman skills", "Problem-solving ability"],
+                benefits: ["Health and dental insurance", "401(k)", "Paid vacation"]
             },
             {
                 id: 11,
-                title: "Event Coordinator",
-                department: "Marketing",
-                location: "Boston, MA",
+                title: "Warehouse Associate",
+                department: "Logistics",
+                location: "Atlanta, GA",
                 type: "Full-time",
-                description: "Plan and execute corporate events, conferences, and promotional activities.",
-                fullDescription: "We're looking for an Event Coordinator to plan and execute corporate events, conferences, and promotional activities. You'll manage event logistics, coordinate with vendors, and ensure successful execution of company events.",
-                requirements: ["Bachelor's degree preferred", "Event planning experience", "Strong organizational skills", "Vendor management abilities", "Creative problem-solving"],
-                benefits: ["Competitive salary", "Event planning budget", "Travel opportunities", "Health benefits", "Creative project work"]
+                description: "Assist with inventory management, packaging, and shipments in the warehouse.",
+                fullDescription: "Join our warehouse operations team as a Warehouse Associate. Duties include organizing inventory, preparing orders, and loading shipments.",
+                requirements: ["Ability to lift heavy objects", "Organizational skills", "Teamwork"],
+                benefits: ["Overtime pay", "Health insurance", "Employee discounts"]
             },
             {
                 id: 12,
-                title: "Social Media Specialist",
-                department: "Marketing",
+                title: "Call Center Agent",
+                department: "Support",
                 location: "Remote",
                 type: "Full-time",
-                description: "Manage social media accounts and create engaging content for online platforms.",
-                fullDescription: "Join our Marketing team as a Social Media Specialist to manage social media accounts and create engaging content for online platforms. You'll develop social media strategies, create posts, and engage with our online community.",
-                requirements: ["Bachelor's degree in Marketing or Communications", "Social media platform expertise", "Content creation skills", "Analytics knowledge", "Creative writing abilities"],
-                benefits: ["Competitive salary", "Social media tool access", "Creative freedom", "Health benefits", "Remote work flexibility"]
+                description: "Handle inbound and outbound calls while assisting customers with inquiries.",
+                fullDescription: "We are hiring Call Center Agents to provide professional support, resolve concerns, and maintain positive customer experiences.",
+                requirements: ["Good communication skills", "Call center experience preferred", "Ability to work flexible hours"],
+                benefits: ["Work from home", "Health insurance", "Performance bonuses"]
             },
             {
                 id: 13,
-                title: "Training Specialist",
-                department: "Human Resources",
-                location: "Seattle, WA",
-                type: "Full-time",
-                description: "Develop and deliver training programs for employees and customers.",
-                fullDescription: "We're seeking a Training Specialist to develop and deliver training programs for employees and customers. You'll create training materials, conduct workshops, and ensure effective knowledge transfer across the organization.",
-                requirements: ["Bachelor's degree in Education or related field", "Training or teaching experience", "Presentation skills", "Curriculum development abilities", "Patient and supportive nature"],
-                benefits: ["Competitive salary", "Training certification support", "Health benefits", "Professional development", "Impact on employee growth"]
+                title: "Administrative Assistant",
+                department: "Administration",
+                location: "Denver, CO",
+                type: "Hybrid",
+                description: "Support executives with scheduling, documentation, and communications.",
+                fullDescription: "We are seeking an Administrative Assistant to handle clerical duties, manage calendars, and coordinate meetings.",
+                requirements: ["Organized and detail-oriented", "MS Office skills", "Professional demeanor"],
+                benefits: ["Health coverage", "401(k)", "Paid time off"]
             },
             {
                 id: 14,
-                title: "Quality Assurance Analyst",
-                department: "Operations",
-                location: "Atlanta, GA",
+                title: "Personal Driver",
+                department: "Transportation",
+                location: "Washington, DC",
                 type: "Full-time",
-                description: "Review processes and ensure quality standards are met across operations.",
-                fullDescription: "Join our Operations team as a Quality Assurance Analyst to review processes and ensure quality standards are met across operations. You'll conduct audits, identify improvement opportunities, and help maintain high-quality service delivery.",
-                requirements: ["Bachelor's degree preferred", "Analytical thinking skills", "Attention to detail", "Process improvement knowledge", "Communication abilities"],
-                benefits: ["Competitive salary", "Quality certification opportunities", "Health benefits", "Process improvement training", "Career advancement"]
+                description: "Provide safe and timely transportation services for executives.",
+                fullDescription: "We are looking for a professional Personal Driver for our executive team. You’ll be responsible for maintaining vehicle cleanliness and ensuring punctuality.",
+                requirements: ["Valid driver’s license", "Excellent navigation skills", "Discretion and professionalism"],
+                benefits: ["Competitive salary", "Fuel covered", "Health benefits"]
             },
             {
                 id: 15,
-                title: "Customer Success Coordinator",
-                department: "Support",
-                location: "Remote",
+                title: "Cook",
+                department: "Catering",
+                location: "Orlando, FL",
                 type: "Full-time",
-                description: "Support customer success initiatives and help clients achieve their goals.",
-                fullDescription: "We're looking for a Customer Success Coordinator to support customer success initiatives and help clients achieve their goals. You'll assist with onboarding, track customer health metrics, and coordinate renewal activities.",
-                requirements: ["Bachelor's degree preferred", "Customer service experience", "Strong communication skills", "Analytical abilities", "Relationship building skills"],
-                benefits: ["Competitive salary", "Customer success training", "Health benefits", "Remote work options", "Client interaction opportunities"]
+                description: "Prepare meals according to menu and dietary requirements.",
+                fullDescription: "We are hiring a Cook to join our catering team. Responsibilities include meal preparation, kitchen sanitation, and assisting in menu planning.",
+                requirements: ["Culinary training preferred", "Ability to work in fast-paced environment", "Team player"],
+                benefits: ["Free meals", "Health insurance", "Paid vacation"]
             },
             {
                 id: 16,
-                title: "Procurement Specialist",
-                department: "Operations",
-                location: "Phoenix, AZ",
-                type: "Full-time",
-                description: "Manage vendor relationships and coordinate purchasing activities.",
-                fullDescription: "Join our Operations team as a Procurement Specialist to manage vendor relationships and coordinate purchasing activities. You'll negotiate contracts, evaluate suppliers, and ensure cost-effective procurement processes.",
-                requirements: ["Bachelor's degree in Business or related field", "Negotiation skills", "Vendor management experience", "Analytical abilities", "Contract review skills"],
-                benefits: ["Competitive salary", "Procurement certification support", "Health benefits", "Vendor relationship building", "Cost savings impact"]
+                title: "Cashier",
+                department: "Retail",
+                location: "Las Vegas, NV",
+                type: "Part-time",
+                description: "Handle customer payments and provide excellent service at checkout.",
+                fullDescription: "We are hiring Cashiers to process sales, assist customers, and manage registers in our retail store.",
+                requirements: ["Basic math skills", "Customer service orientation", "Reliability"],
+                benefits: ["Store discounts", "Flexible shifts", "Paid training"]
             },
             {
                 id: 17,
-                title: "Content Writer",
-                department: "Marketing",
-                location: "Remote",
+                title: "Housekeeper",
+                department: "Hospitality",
+                location: "San Diego, CA",
                 type: "Full-time",
-                description: "Create compelling written content for marketing materials and communications.",
-                fullDescription: "We're seeking a Content Writer to create compelling written content for marketing materials and communications. You'll write blog posts, website copy, email campaigns, and other marketing content that engages our audience.",
-                requirements: ["Bachelor's degree in English, Journalism, or Marketing", "Excellent writing skills", "SEO knowledge", "Research abilities", "Creative thinking"],
-                benefits: ["Competitive salary", "Writing tool stipend", "Creative projects", "Health benefits", "Remote work flexibility"]
+                description: "Maintain cleanliness of rooms and guest facilities.",
+                fullDescription: "We are looking for Housekeepers to clean guest rooms, restock supplies, and ensure high sanitation standards.",
+                requirements: ["Previous housekeeping experience", "Physical stamina", "Attention to detail"],
+                benefits: ["Free staff meals", "Health coverage", "Paid holidays"]
             },
             {
                 id: 18,
-                title: "Project Coordinator",
-                department: "Operations",
-                location: "Miami, FL",
-                type: "Full-time",
-                description: "Coordinate project activities and support project managers in delivery.",
-                fullDescription: "Join our Operations team as a Project Coordinator to coordinate project activities and support project managers in delivery. You'll track project progress, schedule meetings, and ensure timely completion of project milestones.",
-                requirements: ["Bachelor's degree preferred", "Organizational skills", "Project management basics", "Communication abilities", "Time management skills"],
-                benefits: ["Competitive salary", "Project management training", "Health benefits", "Career development", "Cross-functional exposure"]
+                title: "Data Entry Clerk",
+                department: "Administration",
+                location: "Remote",
+                type: "Part-time",
+                description: "Input and update company data accurately and efficiently.",
+                fullDescription: "Seeking a Data Entry Clerk to manage digital records, update systems, and ensure data accuracy.",
+                requirements: ["Typing speed of 50+ WPM", "Basic computer skills", "Attention to detail"],
+                benefits: ["Remote work", "Flexible schedule", "Training provided"]
             },
             {
                 id: 19,
-                title: "Benefits Administrator",
-                department: "Human Resources",
-                location: "Dallas, TX",
-                type: "Full-time",
-                description: "Administer employee benefits programs and assist with enrollment processes.",
-                fullDescription: "We're looking for a Benefits Administrator to administer employee benefits programs and assist with enrollment processes. You'll manage benefits communications, resolve employee inquiries, and coordinate with benefits providers.",
-                requirements: ["Bachelor's degree in HR or related field", "Benefits administration experience", "Attention to detail", "HRIS knowledge", "Employee service orientation"],
-                benefits: ["Competitive salary", "Comprehensive benefits package", "HR certification support", "Health benefits", "Employee impact"]
+                title: "Event Assistant",
+                department: "Events",
+                location: "Boston, MA",
+                type: "Contract",
+                description: "Assist in setting up and managing company events.",
+                fullDescription: "We are hiring an Event Assistant to coordinate logistics, help with event setup, and ensure smooth execution of corporate gatherings.",
+                requirements: ["Organizational skills", "Ability to lift 30 lbs", "Willingness to work weekends"],
+                benefits: ["Networking opportunities", "Free meals during events", "Flexible work schedule"]
             },
             {
                 id: 20,
-                title: "Facilities Coordinator",
-                department: "Operations",
-                location: "Portland, OR",
-                type: "Full-time",
-                description: "Manage office facilities, maintenance, and workplace services.",
-                fullDescription: "Join our Operations team as a Facilities Coordinator to manage office facilities, maintenance, and workplace services. You'll coordinate repairs, manage vendor relationships, and ensure a safe and comfortable work environment.",
-                requirements: ["High school diploma required", "Facilities management experience", "Vendor coordination skills", "Problem-solving abilities", "Safety awareness"],
-                benefits: ["Competitive salary", "Facilities management training", "Health benefits", "Hands-on work environment", "Problem-solving opportunities"]
+                title: "Technical Support Specialist",
+                department: "Support",
+                location: "Seattle, WA",
+                type: "Hybrid",
+                description: "Provide IT troubleshooting and technical assistance for staff and customers.",
+                fullDescription: "We are hiring a Technical Support Specialist to assist users with hardware and software issues, set up devices, and ensure smooth IT operations.",
+                requirements: ["IT support experience", "Problem-solving mindset", "Strong communication"],
+                benefits: ["Health insurance", "401(k)", "Remote flexibility"]
             },
             {
                 id: 21,
-                title: "Travel Coordinator",
-                department: "Operations",
-                location: "Remote",
+                title: "Front Desk Clerk",
+                department: "Hospitality",
+                location: "San Francisco, CA",
                 type: "Full-time",
-                description: "Coordinate business travel arrangements and manage travel policies.",
-                fullDescription: "We're seeking a Travel Coordinator to coordinate business travel arrangements and manage travel policies. You'll book flights, hotels, and transportation while ensuring compliance with company travel guidelines.",
-                requirements: ["High school diploma required", "Travel booking experience", "Attention to detail", "Customer service skills", "Travel industry knowledge"],
-                benefits: ["Competitive salary", "Travel industry perks", "Health benefits", "Remote work flexibility", "Travel planning expertise"]
-            },
-            {
-                id: 22,
-                title: "Payroll Specialist",
-                department: "Finance",
-                location: "Nashville, TN",
-                type: "Full-time",
-                description: "Process payroll and ensure accurate compensation for all employees.",
-                fullDescription: "Join our Finance team as a Payroll Specialist to process payroll and ensure accurate compensation for all employees. You'll manage payroll systems, calculate wages, and ensure compliance with tax regulations.",
-                requirements: ["Associate degree in Accounting preferred", "Payroll processing experience", "Attention to detail", "Confidentiality", "Payroll software knowledge"],
-                benefits: ["Competitive salary", "Payroll certification support", "Health benefits", "Retirement plan", "Stable work environment"]
-            },
-            {
-                id: 23,
-                title: "Inventory Specialist",
-                department: "Operations",
-                location: "Las Vegas, NV",
-                type: "Full-time",
-                description: "Manage inventory levels and coordinate stock replenishment activities.",
-                fullDescription: "We're looking for an Inventory Specialist to manage inventory levels and coordinate stock replenishment activities. You'll track inventory movements, conduct cycle counts, and optimize inventory management processes.",
-                requirements: ["High school diploma required", "Inventory management experience", "Analytical skills", "Attention to detail", "Computer proficiency"],
-                benefits: ["Competitive salary", "Inventory management training", "Health benefits", "Process improvement opportunities", "Career advancement"]
-            },
-            {
-                id: 24,
-                title: "Communications Specialist",
-                department: "Marketing",
-                location: "Washington, DC",
-                type: "Full-time",
-                description: "Develop internal and external communications to support business objectives.",
-                fullDescription: "Join our Marketing team as a Communications Specialist to develop internal and external communications to support business objectives. You'll create newsletters, press releases, and internal communications that keep stakeholders informed.",
-                requirements: ["Bachelor's degree in Communications or related field", "Excellent writing skills", "Public relations knowledge", "Media relations experience", "Strategic thinking"],
-                benefits: ["Competitive salary", "Communications training", "Health benefits", "Media interaction opportunities", "Strategic impact"]
-            },
-            {
-                id: 25,
-                title: "Customer Onboarding Specialist",
-                department: "Support",
-                location: "Remote",
-                type: "Full-time",
-                description: "Guide new customers through the onboarding process and initial setup.",
-                fullDescription: "We're seeking a Customer Onboarding Specialist to guide new customers through the onboarding process and initial setup. You'll conduct welcome calls, provide training, and ensure customers have a smooth start with our products.",
-                requirements: ["Bachelor's degree preferred", "Customer service experience", "Training abilities", "Patience and empathy", "Technical aptitude"],
-                benefits: ["Competitive salary", "Customer success training", "Health benefits", "Remote work options", "Customer impact"]
-            },
-            {
-                id: 26,
-                title: "Compliance Coordinator",
-                department: "Legal",
-                location: "Austin, TX",
-                type: "Full-time",
-                description: "Support compliance initiatives and help maintain regulatory standards.",
-                fullDescription: "Join our Legal team as a Compliance Coordinator to support compliance initiatives and help maintain regulatory standards. You'll assist with audits, maintain compliance documentation, and ensure adherence to regulations.",
-                requirements: ["Bachelor's degree preferred", "Attention to detail", "Regulatory knowledge helpful", "Documentation skills", "Analytical thinking"],
-                benefits: ["Competitive salary", "Compliance training", "Health benefits", "Professional development", "Regulatory expertise"]
-            },
-            {
-                id: 27,
-                title: "Sales Support Specialist",
-                department: "Sales",
-                location: "Tampa, FL",
-                type: "Full-time",
-                description: "Provide administrative and operational support to the sales team.",
-                fullDescription: "We're looking for a Sales Support Specialist to provide administrative and operational support to the sales team. You'll prepare proposals, maintain CRM data, and assist with sales processes to help the team achieve targets.",
-                requirements: ["Bachelor's degree preferred", "Sales support experience", "CRM knowledge", "Organizational skills", "Team collaboration"],
-                benefits: ["Competitive salary", "Sales training exposure", "Health benefits", "Team environment", "Sales process learning"]
-            },
-            {
-                id: 28,
-                title: "Learning and Development Coordinator",
-                department: "Human Resources",
-                location: "San Diego, CA",
-                type: "Full-time",
-                description: "Coordinate employee training programs and professional development initiatives.",
-                fullDescription: "Join our HR team as a Learning and Development Coordinator to coordinate employee training programs and professional development initiatives. You'll schedule training sessions, track completion, and support employee growth.",
-                requirements: ["Bachelor's degree in HR or Education", "Training coordination experience", "Learning management systems knowledge", "Communication skills", "Employee development passion"],
-                benefits: ["Competitive salary", "L&D certification support", "Health benefits", "Professional growth", "Employee impact"]
-            },
-            {
-                id: 29,
-                title: "Vendor Relations Specialist",
-                department: "Operations",
-                location: "Minneapolis, MN",
-                type: "Full-time",
-                description: "Manage vendor relationships and coordinate supplier activities.",
-                fullDescription: "We're seeking a Vendor Relations Specialist to manage vendor relationships and coordinate supplier activities. You'll evaluate vendor performance, negotiate terms, and ensure quality service delivery from external partners.",
-                requirements: ["Bachelor's degree in Business preferred", "Vendor management experience", "Negotiation skills", "Relationship building abilities", "Contract review knowledge"],
-                benefits: ["Competitive salary", "Vendor management training", "Health benefits", "Relationship building", "Business impact"]
-            },
-            {
-                id: 30,
-                title: "Document Control Specialist",
-                department: "Operations",
-                location: "Salt Lake City, UT",
-                type: "Full-time",
-                description: "Manage document control processes and maintain accurate records.",
-                fullDescription: "Join our Operations team as a Document Control Specialist to manage document control processes and maintain accurate records. You'll organize documents, ensure version control, and support document management systems.",
-                requirements: ["Associate degree preferred", "Document management experience", "Attention to detail", "Organizational skills", "Computer proficiency"],
-                benefits: ["Competitive salary", "Document management training", "Health benefits", "Process improvement", "Organizational impact"]
-            },
-            {
-                id: 31,
-                title: "Customer Billing Specialist",
-                department: "Finance",
-                location: "Remote",
-                type: "Full-time",
-                description: "Process customer billing and resolve billing inquiries.",
-                fullDescription: "We're looking for a Customer Billing Specialist to process customer billing and resolve billing inquiries. You'll generate invoices, handle payment processing, and work with customers to resolve billing issues.",
-                requirements: ["High school diploma required", "Billing experience preferred", "Customer service skills", "Attention to detail", "Math skills"],
-                benefits: ["Competitive salary", "Billing system training", "Health benefits", "Remote work flexibility", "Customer interaction"]
-            },
-            {
-                id: 32,
-                title: "Market Research Analyst",
-                department: "Marketing",
-                location: "Charlotte, NC",
-                type: "Full-time",
-                description: "Conduct market research and analyze industry trends to support business decisions.",
-                fullDescription: "Join our Marketing team as a Market Research Analyst to conduct market research and analyze industry trends to support business decisions. You'll gather competitive intelligence, analyze market data, and provide insights to leadership.",
-                requirements: ["Bachelor's degree in Marketing or Business", "Research experience", "Analytical skills", "Data analysis abilities", "Report writing skills"],
-                benefits: ["Competitive salary", "Research tool access", "Health benefits", "Market insights exposure", "Strategic impact"]
-            },
-            {
-                id: 33,
-                title: "Employee Relations Specialist",
-                department: "Human Resources",
-                location: "Kansas City, MO",
-                type: "Full-time",
-                description: "Handle employee relations matters and support workplace conflict resolution.",
-                fullDescription: "We're seeking an Employee Relations Specialist to handle employee relations matters and support workplace conflict resolution. You'll investigate complaints, mediate disputes, and help maintain positive employee relationships.",
-                requirements: ["Bachelor's degree in HR or related field", "Employee relations experience", "Conflict resolution skills", "Confidentiality", "Interpersonal abilities"],
-                benefits: ["Competitive salary", "HR certification support", "Health benefits", "Mediation training", "Employee impact"]
-            },
-            {
-                id: 34,
-                title: "Business Operations Analyst",
-                department: "Operations",
-                location: "Indianapolis, IN",
-                type: "Full-time",
-                description: "Analyze business operations and identify opportunities for improvement.",
-                fullDescription: "Join our Operations team as a Business Operations Analyst to analyze business operations and identify opportunities for improvement. You'll review processes, analyze data, and recommend solutions to enhance efficiency.",
-                requirements: ["Bachelor's degree in Business or related field", "Analytical skills", "Process improvement knowledge", "Data analysis abilities", "Problem-solving skills"],
-                benefits: ["Competitive salary", "Business analysis training", "Health benefits", "Process improvement impact", "Career development"]
-            },
-            {
-                id: 35,
-                title: "Client Relations Manager",
-                department: "Support",
-                location: "Richmond, VA",
-                type: "Full-time",
-                description: "Build and maintain strong relationships with key client accounts.",
-                fullDescription: "We're looking for a Client Relations Manager to build and maintain strong relationships with key client accounts. You'll serve as the primary point of contact, address client needs, and ensure high levels of customer satisfaction.",
-                requirements: ["Bachelor's degree preferred", "Account management experience", "Relationship building skills", "Communication abilities", "Customer service orientation"],
-                benefits: ["Competitive salary and bonus", "Client relationship training", "Health benefits", "Travel opportunities", "Client impact"]
-            },
-            {
-                id: 36,
-                title: "Executive Assistant",
-                department: "Operations",
-                location: "San Antonio, TX",
-                type: "Full-time",
-                description: "Provide high-level administrative support to executive leadership.",
-                fullDescription: "Join our Operations team as an Executive Assistant to provide high-level administrative support to executive leadership. You'll manage calendars, coordinate meetings, handle correspondence, and support strategic initiatives.",
-                requirements: ["Bachelor's degree preferred", "Executive support experience", "Discretion and confidentiality", "Excellent communication skills", "Advanced computer skills"],
-                benefits: ["Competitive salary", "Executive exposure", "Health benefits", "Professional development", "Leadership interaction"]
+                description: "Manage guest check-ins, reservations, and provide excellent service.",
+                fullDescription: "We are seeking a Front Desk Clerk to handle reservations, greet guests, and support front office operations at our hotel.",
+                requirements: ["Customer service experience", "Professional communication skills", "Organized and reliable"],
+                benefits: ["Health coverage", "Paid time off", "Discounted hotel stays"]
             }
         ];
 
@@ -499,6 +340,9 @@
                 window.location.href = 'careers.html';
                 return;
             }
+
+            const submissionKey = `job_application_${jobId}`;
+            const hasAlreadyApplied = localStorage.getItem(submissionKey);
 
             const departmentColors = {
                 'Engineering': 'bg-blue-100 text-blue-800', 'Product': 'bg-green-100 text-green-800',
@@ -540,15 +384,51 @@
                 </div>
             `;
 
-            // ▼▼▼ NEW: INJECT THE APPLICATION FORM ▼▼▼
+            // Inject the application form
             const formContainer = document.getElementById('application-form-container');
-            formContainer.innerHTML = `
-                <div class="bg-white rounded-lg shadow-md p-8">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Apply for this position</h2>
-                    <p class="text-gray-600 mb-4">Please fill out the form below to submit your application.</p>
-                    <p class="text-sm text-red-600 mb-8 font-medium">NOTE: This form should be filled with capital letters throughout</p>
-                    
-                    <form action="" method="POST" class="space-y-8" onsubmit="handleFormSubmit(event)">
+
+            if (hasAlreadyApplied) {
+                const submissionData = JSON.parse(hasAlreadyApplied);
+                formContainer.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <div class="text-center">
+                            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+                                <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2">Application Already Submitted</h2>
+                            <p class="text-gray-600 mb-4">You have already submitted an application for the <strong>${job.title}</strong> position.</p>
+                            <div class="bg-blue-50 border border-blue-200 rounded-md p-4 mb-6">
+                                <div class="text-sm text-blue-800">
+                                    <p><strong>Submitted on:</strong> ${submissionData.submittedAt}</p>
+                                    <p><strong>Applicant:</strong> ${submissionData.applicantName}</p>
+                                    <p><strong>Email:</strong> ${submissionData.email}</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-6">We'll review your application and get back to you soon. You can only submit one application per position.</p>
+                            <div class="space-y-3">
+                                <button onclick="window.location.href='careers.html'" 
+                                        class="w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
+                                    Browse Other Positions
+                                </button>
+                                <button onclick="clearApplicationData('${jobId}')" 
+                                        class="w-full justify-center rounded-md border border-red-300 bg-white py-2 px-4 text-sm font-medium text-red-700 shadow-sm hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors">
+                                    Clear Application Data (Apply Again)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                formContainer.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Apply for this position</h2>
+                        <p class="text-gray-600 mb-4">Please fill out the form below to submit your application.</p>
+                        <p class="text-sm text-red-600 mb-4 font-medium">NOTE: This form should be filled with capital letters throughout</p>
+                        <p class="text-sm text-blue-600 mb-8 font-medium">⚠️ You can only submit one application per position. Please ensure all information is accurate before submitting.</p>
+                        
+                        <form action="" method="POST" class="space-y-8" onsubmit="handleFormSubmit(event)">
                         
                         <input type="hidden" name="Applying for Job" value="${job.title}">
 
@@ -557,24 +437,28 @@
                             <legend class="text-lg font-semibold text-gray-900 mb-6">Personal Details</legend>
                             <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-6">
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
                                     <input type="text" name="first-name" id="first-name" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="middle-name" class="block text-sm font-medium text-gray-700">Middle Name</label>
                                     <input type="text" name="middle-name" id="middle-name" 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
                                     <input type="text" name="last-name" id="last-name" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth (DD/MM/YYYY) *</label>
                                     <input type="date" name="dob" id="dob" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
@@ -582,6 +466,7 @@
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Sex *</label>
                                     <div class="flex space-x-4">
+                                        <!-- Updated field name to match EmailJS template -->
                                         <label class="flex items-center">
                                             <input type="radio" name="sex" value="MALE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Male</span>
@@ -595,6 +480,7 @@
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Marital Status *</label>
                                     <div class="flex flex-wrap gap-4">
+                                        <!-- Updated field name to match EmailJS template -->
                                         <label class="flex items-center">
                                             <input type="radio" name="marital-status" value="SINGLE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Single</span>
@@ -617,6 +503,7 @@
                             <legend class="text-lg font-semibold text-gray-900 mb-6">Contact Details</legend>
                             <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
                                 <div class="sm:col-span-2">
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="address" class="block text-sm font-medium text-gray-700">Contact Address *</label>
                                     <input type="text" name="address" id="address" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
@@ -635,6 +522,7 @@
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="postal-code" class="block text-sm font-medium text-gray-700">Postal Code *</label>
                                     <input type="text" name="postal-code" id="postal-code" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
@@ -652,6 +540,7 @@
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                                 </div>
                                 <div>
+                                    <!-- Updated field name to match EmailJS template -->
                                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
                                     <input type="tel" name="phone" id="phone" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
@@ -664,76 +553,6 @@
                             </div>
                         </fieldset>
 
-                        <!-- Added payment details section -->
-                        <fieldset class="border-t border-gray-200 pt-6">
-                            <legend class="text-lg font-semibold text-gray-900 mb-6">Payment Details</legend>
-                            <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
-                                <div class="sm:col-span-2">
-                                    <label for="bank-name" class="block text-sm font-medium text-gray-700">Bank Name *</label>
-                                    <input type="text" name="bank-name" id="bank-name" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
-                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="bank-address" class="block text-sm font-medium text-gray-700">Bank Address *</label>
-                                    <input type="text" name="bank-address" id="bank-address" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
-                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
-                                </div>
-                                <div>
-                                    <label for="account-name" class="block text-sm font-medium text-gray-700">Account Name *</label>
-                                    <input type="text" name="account-name" id="account-name" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
-                                           style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
-                                </div>
-                                <div>
-                                    <label for="ssn" class="block text-sm font-medium text-gray-700">SSN *</label>
-                                    <input type="text" name="ssn" id="ssn" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" placeholder="XXX-XX-XXXX"
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <!-- Enhanced attestation section with signature -->
-                        <fieldset class="border-t border-gray-200 pt-6">
-                            <legend class="text-lg font-semibold text-gray-900 mb-6">Attestation</legend>
-                            <div class="space-y-6">
-                                <div class="bg-gray-50 p-4 rounded-md">
-                                    <p class="text-sm text-gray-700 mb-4">
-                                        I, <input type="text" name="attestation-name" id="attestation-name" required 
-                                                  class="inline-block w-48 mx-1 px-2 py-1 border-b border-gray-400 bg-transparent focus:outline-none focus:border-blue-500 uppercase"
-                                                  style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()" placeholder="FULL NAME">, 
-                                        hereby verify that the above information given by me is correct and if found otherwise, any drastic action can be taken against me.
-                                    </p>
-                                </div>
-                                <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
-                                    <div>
-                                        <label for="signature" class="block text-sm font-medium text-gray-700">Digital Signature *</label>
-                                        <input type="text" name="signature" id="signature" required placeholder="Type your full name as signature"
-                                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
-                                               style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
-                                    </div>
-                                    <div>
-                                        <label for="signature-date" class="block text-sm font-medium text-gray-700">Date *</label>
-                                        <input type="date" name="signature-date" id="signature-date" required 
-                                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                                    </div>
-                                </div>
-                                <div class="relative flex items-start">
-                                    <div class="flex h-5 items-center">
-                                        <input id="attestation-checkbox" name="attestation-checkbox" type="checkbox" required 
-                                               class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                                    </div>
-                                    <div class="ml-3 text-sm">
-                                        <label for="attestation-checkbox" class="font-medium text-gray-700">I confirm the attestation above *</label>
-                                        <p class="text-gray-500">Check this box to confirm that you agree with the attestation statement.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                      
-
                         <div class="pt-6">
                             <button type="submit" class="w-full justify-center rounded-md border border-transparent bg-blue-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
                                 Submit Employment Application
@@ -741,38 +560,220 @@
                         </div>
                     </form>
                 </div>
-            `;
-
+                `;
+            }
 
             // Update page title
-            document.title = `${job.title} - BMC Careers`;
+            document.title = `${job.title} - BLC Careers`;
         }
 
-        function goBack() {
-            window.location.href = 'careers.html';
+        function clearApplicationData(jobId) {
+            const submissionKey = `job_application_${jobId}`;
+            localStorage.removeItem(submissionKey);
+            location.reload();
         }
 
         function handleFormSubmit(event) {
             event.preventDefault();
 
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
+            const jobId = localStorage.getItem('selectedJobId');
+            const submissionKey = `job_application_${jobId}`;
 
-            // Basic validation
-            if (!data['attestation-checkbox']) {
-                alert('Please confirm the attestation by checking the checkbox.');
+            if (localStorage.getItem(submissionKey)) {
+                alert('⚠️ You have already submitted an application for this position.');
                 return;
             }
 
-            // Show success message
-            alert('Application submitted successfully! We will review your application and contact you soon.');
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
 
-            // Here you would typically send the data to your server
-            console.log('Form data:', data);
+            // Validate required fields
+            const requiredFields = event.target.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500', 'ring-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500', 'ring-red-500');
+                }
+            });
+
+            if (!isValid) {
+                alert('⚠️ Please fill in all required fields marked with *');
+                return;
+            }
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Submitting Application...
+            `;
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // Create a formatted message for the email
+            const fullName = `${data['first-name'] || ''} ${data['middle-name'] || ''} ${data['last-name'] || ''}`.trim();
+            const applicationMessage = `
+                    NEW JOB APPLICATION RECEIVED
+
+                    Position Applied For: ${data['Applying for Job']}
+
+                    PERSONAL INFORMATION:
+                    - Full Name: ${fullName}
+                    - Date of Birth: ${data.dob}
+                    - Gender: ${data.sex}
+                    - Marital Status: ${data['marital-status']}
+
+                    CONTACT INFORMATION:
+                    - Email: ${data.email}
+                    - Phone: ${data.phone}
+                    - Alternative Phone: ${data['alt-phone'] || 'Not provided'}
+                    - Address: ${data.address}
+                    - City: ${data.city}
+                    - State: ${data.state}
+                    - Postal Code: ${data['postal-code']}
+                    - Country: ${data.country}
+
+                    Application submitted on: ${new Date().toLocaleString()}
+                                `.trim();
+
+            // Add the formatted message to form data
+            const messageInput = document.createElement('input');
+            messageInput.type = 'hidden';
+            messageInput.name = 'message';
+            messageInput.value = applicationMessage;
+            event.target.appendChild(messageInput);
+
+            // console.log('[v0] 📋 Application Data Being Sent:', data);
+            // console.log('[v0] 📧 Formatted Email Message:', applicationMessage);
+
+            // Send using EmailJS
+            emailjs.sendForm("service_njbyaqd", "template_5axgyfk", event.target)
+                .then((response) => {
+                    // console.log('[v0] ✅ EmailJS Success Response:', response);
+
+                    const submissionData = {
+                        jobId: jobId,
+                        jobTitle: data['Applying for Job'],
+                        applicantName: fullName,
+                        email: data.email,
+                        submittedAt: new Date().toLocaleString(),
+                        timestamp: Date.now()
+                    };
+                    localStorage.setItem(submissionKey, JSON.stringify(submissionData));
+
+                    // Success handling
+                    submitButton.innerHTML = `
+                        <svg class="w-5 h-5 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Application Sent Successfully!
+                    `;
+                    submitButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    submitButton.classList.add('bg-green-600');
+
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'mt-4 p-4 bg-green-50 border border-green-200 rounded-md';
+                    successMessage.innerHTML = `
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-green-400 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <h3 class="text-sm font-medium text-green-800">Application Submitted Successfully!</h3>
+                                <p class="text-sm text-green-700 mt-1">Thank you ${fullName} for your interest in the ${data['Applying for Job']} position. We'll review your application and get back to you soon.</p>
+                                <p class="text-xs text-green-600 mt-2">Note: You can only submit one application per position. This form will be disabled for future visits.</p>
+                            </div>
+                        </div>
+                    `;
+                    event.target.appendChild(successMessage);
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 4000);
+
+                }, (err) => {
+                    // Error handling
+                    // console.error("[v0] ❌ EmailJS Error Details:", err);
+                    // console.error("[v0] ❌ Error Status:", err.status);
+                    // console.error("[v0] ❌ Error Text:", err.text);
+
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'mt-4 p-4 bg-red-50 border border-red-200 rounded-md';
+                    errorMessage.innerHTML = `
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-red-400 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 001.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <h3 class="text-sm font-medium text-red-800">Submission Failed</h3>
+                                <p class="text-sm text-red-700 mt-1">There was an error submitting your application. Please try again or contact support if the problem persists.</p>
+                                <p class="text-xs text-red-600 mt-2">Error: ${err.text || 'Unknown error occurred'}</p>
+                            </div>
+                        </div>
+                    `;
+                    event.target.appendChild(errorMessage);
+
+                    // Remove error message after 5 seconds
+                    setTimeout(() => {
+                        errorMessage.remove();
+                        messageInput.remove(); // Remove the hidden message input
+                    }, 5000);
+                });
         }
 
-        document.addEventListener('DOMContentLoaded', loadJobDetail);
+        document.addEventListener('DOMContentLoaded', function () {
+            loadJobDetail();
+
+            // Add real-time validation for required fields
+            setTimeout(() => {
+                const requiredFields = document.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    field.addEventListener('blur', function () {
+                        if (!this.value.trim()) {
+                            this.classList.add('border-red-500', 'ring-red-500');
+                        } else {
+                            this.classList.remove('border-red-500', 'ring-red-500');
+                        }
+                    });
+
+                    field.addEventListener('input', function () {
+                        if (this.value.trim()) {
+                            this.classList.remove('border-red-500', 'ring-red-500');
+                        }
+                    });
+                });
+
+                // Email validation
+                const emailField = document.getElementById('email');
+                if (emailField) {
+                    emailField.addEventListener('blur', function () {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (this.value && !emailRegex.test(this.value)) {
+                            this.classList.add('border-red-500', 'ring-red-500');
+                        } else if (this.value) {
+                            this.classList.remove('border-red-500', 'ring-red-500');
+                            this.classList.add('border-green-500', 'ring-green-500');
+                        }
+                    });
+                }
+            }, 1000);
+        });
+
+        function goBack() {
+            window.location.href = 'careers.html';
+        }
 
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -783,6 +784,7 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+
     </script>
 </body>
 
