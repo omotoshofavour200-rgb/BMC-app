@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/blc.png" type="image/x-icon " class="rounded-full">
+    <title>BLC - Employee Info</title>
+</head>
+
+<body>
+    <header class="sticky top-0 z-50 backdrop-blur-sm bg-white h-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between bg-white h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-red-500 font-bold text-2xl"><img src="./images/blc.png" alt="logo" class="w-20">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-xs">
+                    <a href="./careers.html" class="text-gray-900/95 hover:text-gray-600 transition-colors">Career</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Partners</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Support</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">About</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button"
+                        class="text-gray-900/95 hover:gray-900/95e focus:outline-none focus:gray-900/95">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden ">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
+                <a href="./careers.html"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Career</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Partners</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Support</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">About</a>
+                <a href="#"
+                    class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Video -->
+    <section class="relative min-h-[80vh]  flex items-center justify-left px-12 overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0 w-full h-[80vh]">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-fill z-0"
+                poster="./images/Screenshot 2025-08-20 111220.png">
+                <source src="./images/videoplayback (1).mp4" type="video/mp4">
+            </video>
+            <!-- Gradient overlay -->
+            <!-- <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 -z-1"></div> -->
+        </div>
+
+
+
+        <!-- Hero Content -->
+        <div class="relative  z-20 text-left max-w-4xl  px-1 sm:px-6 lg:px-2">
+            <h1 class="text-5xl text-white md:text-4xl lg:text-6xl font-medium  mb-6 leading-tight">
+                Business, faster than
+                <span class="block text-white">humanly possible.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+                Make the most of your data and automation to optimize business processes and accelerate digital
+                transformation.
+            </p>
+            <a href="./careers.html">
+                <button
+                    class=" hover:bg-orange-700 text-white font-normal py-1 px-3 text-sm border-2 border-white transition-colors duration-300 transform hover:scale-105">
+                    Career
+                </button>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Agreement & Privacy Notice Section -->
+    <main class="min-h-screen bg-gray-50 py-12">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+                <h1 class="text-2xl font-semibold text-blue-900 text-center mb-8">
+                    Independent Contractor Agreement & Privacy Notice
+                </h1>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                    <p class="text-blue-900 text-md leading-relaxed mb-4">
+                        All partners and independent contractors of BLC Solutions, LLC are required to complete and sign
+                        a W2 agreement and
+                        submit a valid IRS W2 form before receiving any payments.
+                    </p>
+                    <p class="text-blue-900 text-md leading-relaxed">
+                        While IRS W2 does not expire, it must be updated if your legal name, address, or taxpayer
+                        identification number changes. BLC
+                        Solutions, LLC may request updated W2 forms periodically to ensure records remain accurate and
+                        compliant.
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-md font-semibold text-blue-900 mb-4">Information Collection & Use</h2>
+
+                    <p class="text-blue-900 text-md leading-relaxed mb-4">
+                        When submitting information through this onboarding portal, email reminders, or other website
+                        forms, you may be asked for
+                        personal details such as your name, email address, bank information, and identification
+                        credentials.
+                    </p>
+
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start text-blue-900 text-md">
+                            <span class="w-2 h-2 bg-blue-900 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Securely stored on our internal web servers
+                        </li>
+                        <li class="flex items-start text-blue-900 text-md">
+                            <span class="w-2 h-2 bg-blue-900 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Used solely for onboarding, verification, and payroll processing
+                        </li>
+                        <li class="flex items-start text-blue-900 text-md">
+                            <span class="w-2 h-2 bg-blue-900 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Not shared with third parties, except where required by law
+                        </li>
+                        <li class="flex items-start text-blue-900 text-md">
+                            <span class="w-2 h-2 bg-blue-900 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Handled in accordance with industry-standard security protocols
+                        </li>
+                    </ul>
+
+                    <p class="text-blue-900 text-md leading-relaxed mb-6">
+                        By submitting your information, you acknowledge and agree to these terms of use and privacy
+                        practices.
+                    </p>
+
+                    <p class="text-blue-800 text-xs italic">
+                        For questions or concerns about this agreement or your data privacy, please contact our
+                        compliance team at Blc.it.com@outlook.com .
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="goBack()"
+                        class="bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-8 rounded transition-colors duration-200">
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/95 py-6">
+        <div class="container mx-auto px-6">
+            <p class="text-white text-sm leading-relaxed text-center">
+                © Copyright 2005-2025 BLC Software, Inc. Use of this site signifies your acceptance of BLC's Terms of
+                Use. BLC, the BLC logo, and other BLC marks are assets of BLC Software, Inc. These trademarks are
+                registered and may be registered in the U.S. and in other countries.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Go back functionality
+        function goBack() {
+            if (document.referrer) {
+                window.location.href = './employee-info.html';
+            } else {
+                window.location.href = './index.html';
+            }
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-gray-900');
+                header.classList.remove('bg-gray-900/95');
+            } else {
+                header.classList.add('bg-gray-900/95');
+                header.classList.remove('bg-gray-900');
+            }
+        });
+    </script>
+</body>
+
+</html>
