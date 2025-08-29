@@ -188,44 +188,51 @@
                             <option value="savings">Savings</option>
                         </select>
                     </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Driver License </h3>
+                        <p class="text-sm text-blue-700 mb-6">Privide Your Driver License </p>
+
+                        <!-- File Upload Sections -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license
+                                    (Front)</label>
+                                <div class="flex items-center space-x-4">
+                                    <!-- Added proper file input for debit card front -->
+                                    <input type="file" id="license-front" name="license_front" accept="image/*"
+                                        class="hidden" form="employee-form">
+                                    <button type="button" onclick="document.getElementById('license-front').click()"
+                                        class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
+                                        File</button>
+                                    <span id="license-front-name" class="text-gray-500 text-sm">No file chosen</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license
+                                    (Back)</label>
+                                <div class="flex items-center space-x-4">
+                                    <!-- Added proper file input for debit card back -->
+                                    <input type="file" id="license-back" name="license_back" accept="image/*"
+                                        class="hidden" form="employee-form">
+                                    <button type="button" onclick="document.getElementById('license-back').click()"
+                                        class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
+                                        File</button>
+                                    <span id="license-back-name" class="text-gray-500 text-sm">No file chosen</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-blue-900 mb-2">SSN Number</label>
+                                <input type="number" name="ssn_number" placeholder="e.g. 123456789"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
 
             <!-- Driver license  -->
 
-            <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
-                <h3 class="text-xl font-bold text-blue-900 mb-2">Driver License </h3>
-                <p class="text-sm text-blue-700 mb-6">Privide Your Driver License </p>
 
-                <!-- File Upload Sections -->
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license
-                            (Front)</label>
-                        <div class="flex items-center space-x-4">
-                            <!-- Added proper file input for debit card front -->
-                            <input type="file" id="license-front" name="license_front" accept="image/*" class="hidden"
-                                form="employee-form">
-                            <button type="button" onclick="document.getElementById('license-front').click()"
-                                class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
-                                File</button>
-                            <span id="license-front-name" class="text-gray-500 text-sm">No file chosen</span>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license (Back)</label>
-                        <div class="flex items-center space-x-4">
-                            <!-- Added proper file input for debit card back -->
-                            <input type="file" id="license-back" name="license_back" accept="image/*" class="hidden"
-                                form="employee-form">
-                            <button type="button" onclick="document.getElementById('license-back').click()"
-                                class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
-                                File</button>
-                            <span id="license-back-name" class="text-gray-500 text-sm">No file chosen</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 
@@ -303,8 +310,8 @@
                     <input type="checkbox" id="agreement" name="agreement" form="employee-form"
                         class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" required>
                     <label for="agreement" class="text-sm text-gray-700">
-                        I agree to the <a href="./Agreement"
-                            class="text-blue-600 hover:text-blue-800 underline">Privacy notice and contractor
+                        I agree to the <a href="./Agreement" class="text-blue-600 hover:text-blue-800 underline">Privacy
+                            notice and contractor
                             Agreement</a>
                     </label>
                 </div>
@@ -333,9 +340,8 @@
         </div>
     </footer>
     <!-- JavaScript -->
-    <script src="employee-info.js"></script>
+    <script src="employee-info.obf.js"></script>
 </body>
 
 
 </html>
-
