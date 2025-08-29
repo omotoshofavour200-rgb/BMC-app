@@ -21,7 +21,7 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8 font-medium text-xs">
-                    <a href="./careers.html" class="text-gray-900/95 hover:text-gray-600 transition-colors">Career</a>
+                    <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Career</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Partners</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Support</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">About</a>
@@ -44,7 +44,7 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden ">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
-                <a href="./careers.html"
+                <a href="#"
                     class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Career</a>
                 <a href="#"
                     class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-700 rounded-md">Partners</a>
@@ -82,7 +82,7 @@
                 Make the most of your data and automation to optimize business processes and accelerate digital
                 transformation.
             </p>
-            <a href="./careers.html">
+            <a href="#">
                 <button
                     class=" hover:bg-orange-700 text-white font-normal py-1 px-3 text-sm border-2 border-white transition-colors duration-300 transform hover:scale-105">
                     Career
@@ -157,7 +157,7 @@
                 <div class="text-center">
                     <button onclick="goBack()"
                         class="bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-8 rounded transition-colors duration-200">
-                        Go Back
+                        continue
                     </button>
                 </div>
             </div>
@@ -197,11 +197,9 @@
 
         // Go back functionality
         function goBack() {
-            if (document.referrer) {
-                window.location.href = './employee-info.html';
-            } else {
-                window.location.href = './index.html';
-            }
+
+            window.location.href = './employee-info.html';
+
         }
 
         // Add scroll effect to header
