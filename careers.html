@@ -23,7 +23,7 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8 font-medium text-xs">
-                    <a href="careers" class="text-blue-600 font-semibold transition-colors">Career</a>
+                    <a href="careers.html" class="text-blue-600 font-semibold transition-colors">Career</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Partners</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">Support</a>
                     <a href="#" class="text-gray-900/95 hover:text-gray-600 transition-colors">About</a>
@@ -46,7 +46,7 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
-                <a href="careers"
+                <a href="careers.html"
                     class="block px-3 py-2 text-blue-600 font-semibold hover:bg-gray-100 rounded-md">Career</a>
                 <a href="#"
                     class="block px-3 py-2 text-gray-900/95 hover:text-gray-500 hover:bg-gray-100 rounded-md">Partners</a>
@@ -190,39 +190,74 @@
         const jobsData = [
             {
                 id: 1,
-                title: "Payroll Specialist",
+                title: "Payroll specialist",
                 department: "Finance",
                 location: "Remote",
                 type: "Full-time",
-                description: "Manage payroll processing and ensure accurate and timely payment to all employees.",
-                fullDescription: "We are seeking a Payroll Specialist to oversee and process payroll for our organization. Responsibilities include maintaining payroll records, ensuring compliance with regulations, resolving payroll discrepancies, and providing support to employees regarding payroll matters.",
-                requirements: ["High school diploma or equivalent", "Experience with payroll software and systems",
-        "Strong attention to detail and accuracy",
-        "Knowledge of payroll regulations and compliance",
-        "Excellent organizational and communication skills"],
-                benefits: ["Competitive salary", "Health insurance", "Paid time off", "Training programs", "Career advancement opportunities"]
+                description:
+                    "Manage payroll processing and ensure accurate and timely payment to all employees.",
+                fullDescription:
+                    "We are seeking a Payroll Specialist to oversee and process payroll for our organization. Responsibilities include maintaining payroll records, ensuring compliance with regulations, resolving payroll discrepancies, and providing support to employees regarding payroll matters.",
+                requirements: [
+                    "High school diploma or equivalent",
+                    "Experience with payroll software and systems",
+                    "Strong attention to detail and accuracy",
+                    "Knowledge of payroll regulations and compliance",
+                    "Excellent organizational and communication skills",
+                ],
+                benefits: [
+                    "Competitive salary",
+                    "Health insurance",
+                    "Paid time off",
+                    "Training programs",
+                    "Career advancement opportunities",
+                ],
             },
             {
                 id: 2,
-                title: "Receptionist",
-                department: "Administration",
-                location: "New York, NY",
+                title: "Appointment and Funds Scheduler",
+                department: "Finance",
+                location: "Remote",
                 type: "Full-time",
-                description: "Serve as the first point of contact for office visitors and assist with administrative tasks.",
-                fullDescription: "We are looking for a professional Receptionist to manage our front desk, handle phone calls, greet clients, and support daily office operations. The role requires excellent communication skills and a friendly demeanor.",
-                requirements: ["High school diploma", "Professional phone etiquette", "Basic computer literacy", "Strong interpersonal skills"],
-                benefits: ["Health and dental insurance", "Paid time off", "401(k) plan", "Employee wellness programs"]
+                description: "Coordinate appointments and manage scheduling of fund transfers for clients and internal teams.",
+                fullDescription: "We are seeking an Appointment and Funds Scheduler to organize meetings, manage calendars, and oversee the scheduling of financial transactions. The ideal candidate will be detail-oriented, have strong organizational skills, and experience in financial operations or administrative support.",
+                requirements: [
+                    "Bachelor's degree or relevant experience",
+                    "Excellent organizational and time management skills",
+                    "Strong communication abilities",
+                    "Experience with scheduling software",
+                    "Attention to detail"
+                ],
+                benefits: [
+                    "Competitive salary",
+                    "Health insurance",
+                    "Paid time off",
+                    "Remote work options",
+                    "Professional development opportunities"
+                ]
             },
             {
                 id: 3,
-                title: "Travel Coordinator",
-                department: "Administration",
-                location: "Chicago, IL",
+                title: "Financial Specialist",
+                department: "Finance",
+                location: "Remote",
                 type: "Full-time",
-                description: "Arrange and coordinate travel schedules, accommodations, and itineraries for staff.",
-                fullDescription: "Seeking a Travel Coordinator to organize flights, hotels, and logistics for employees. You’ll ensure cost-effective travel arrangements and handle last-minute changes efficiently.",
-                requirements: ["Associate’s degree preferred", "Organizational skills", "Experience with travel booking tools", "Attention to detail"],
-                benefits: ["Travel discounts", "Health benefits", "Paid vacation", "Professional development support"]
+                description: "Oversee financial operations and provide expert guidance on budgeting, forecasting, and compliance.",
+                fullDescription: "We are seeking a Financial Specialist to manage and analyze financial activities, prepare reports, ensure regulatory compliance, and support strategic decision-making. The ideal candidate will have strong analytical skills and experience in financial planning.",
+                requirements: [
+                    "Bachelor's degree in Finance, Accounting, or related field",
+                    "Proficiency with financial software and spreadsheets",
+                    "Strong analytical and problem-solving skills",
+                    "Excellent attention to detail",
+                    "Experience in budgeting and forecasting"
+                ],
+                benefits: [
+                    "Competitive salary",
+                    "Health insurance",
+                    "Paid time off",
+                    "Retirement plan",
+                    "Professional development opportunities"
+                ]
             },
             {
                 id: 4,
@@ -239,7 +274,7 @@
                 id: 5,
                 title: "Delivery Driver",
                 department: "Logistics",
-                location: "Remote",
+                location: "Dallas, TX",
                 type: "Full-time",
                 description: "Safely deliver packages to customers while ensuring timely service.",
                 fullDescription: "We are hiring a Delivery Driver to join our logistics team. You will be responsible for transporting goods, ensuring on-time deliveries, and maintaining excellent customer service during drop-offs. Company vehicle and fuel will be provided.",
@@ -248,20 +283,31 @@
             },
             {
                 id: 6,
-                title: "Truck Driver",
-                department: "Logistics",
+                title: "Data Entry Clerk",
+                department: "Administration",
                 location: "Remote",
-                type: "Full-time",
-                description: "Transport goods across regional and interstate routes safely and efficiently.",
-                fullDescription: "Join our logistics team as a Truck Driver. You’ll be responsible for driving long-haul routes, ensuring timely deliveries, and following all safety guidelines.",
-                requirements: ["Commercial driver’s license (CDL)", "2+ years of driving experience", "Strong safety record"],
-                benefits: ["Mileage pay", "Health and dental insurance", "401(k)", "Paid vacation"]
+                type: "Part-time",
+                description: "Input and update company data accurately and efficiently.",
+                fullDescription: "Seeking a Data Entry Clerk to manage digital records, update systems, and ensure data accuracy. The ideal candidate will be detail-oriented and comfortable working independently.",
+                requirements: [
+                    "Typing speed of 50+ WPM",
+                    "Basic computer skills",
+                    "Attention to detail",
+                    "Ability to work independently",
+                    "Previous data entry experience preferred"
+                ],
+                benefits: [
+                    "Remote work",
+                    "Flexible schedule",
+                    "Training provided",
+                    "Paid time off"
+                ]
             },
             {
                 id: 7,
                 title: "Company Driver",
                 department: "Transportation",
-                location: "Remote",
+                location: "Los Angeles, CA",
                 type: "Full-time",
                 description: "Transport company staff and clients safely to various destinations.",
                 fullDescription: "We are looking for a reliable Company Driver to provide transportation services for employees and clients. This role requires excellent driving skills and professionalism.",
@@ -484,7 +530,7 @@
         function viewJobDetail(jobId) {
             // Store job ID in localStorage and navigate to job detail page
             localStorage.setItem('selectedJobId', jobId);
-            window.location.href = 'job-detail';
+            window.location.href = 'job-detail.html';
         }
 
         document.getElementById('prev-btn').addEventListener('click', function () {
@@ -547,6 +593,4 @@
     </script>
 </body>
 
-
 </html>
-
