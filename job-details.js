@@ -1,24 +1,36 @@
-(function () {
-  emailjs.init("WugqMMmr5Zh-h55jk");
+/* global emailjs */
+/* eslint-disable no-undef */
+
+const emailjs = window.emailjs || globalThis.emailjs;
+// EmailJS is loaded via script tag in HTML
+(() => {
+  // Check if EmailJS is loaded
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("WugqMMmr5Zh-h55jk");
+  } else {
+    console.error(
+      "EmailJS library not loaded. Please include the EmailJS script in your HTML."
+    );
+  }
 })();
 
 const jobsData = [
   {
     id: 1,
-    title: "Customer Service Representative",
-    department: "Support",
+    title: "Payroll specialist",
+    department: "Finance",
     location: "Remote",
     type: "Full-time",
     description:
-      "Provide exceptional customer support and resolve inquiries for our enterprise clients.",
+      "Manage payroll processing and ensure accurate and timely payment to all employees.",
     fullDescription:
-      "We are seeking a Customer Service Representative to provide exceptional support to our enterprise clients. You'll handle customer inquiries, resolve technical issues, and ensure customer satisfaction through professional communication and problem-solving skills.",
+      "We are seeking a Payroll Specialist to oversee and process payroll for our organization. Responsibilities include maintaining payroll records, ensuring compliance with regulations, resolving payroll discrepancies, and providing support to employees regarding payroll matters.",
     requirements: [
       "High school diploma or equivalent",
-      "Excellent communication skills",
-      "Customer service experience preferred",
-      "Basic computer skills",
-      "Problem-solving abilities",
+      "Experience with payroll software and systems",
+      "Strong attention to detail and accuracy",
+      "Knowledge of payroll regulations and compliance",
+      "Excellent organizational and communication skills",
     ],
     benefits: [
       "Competitive salary",
@@ -30,48 +42,52 @@ const jobsData = [
   },
   {
     id: 2,
-    title: "Receptionist",
-    department: "Administration",
-    location: "New York, NY",
+    title: "Appointment and Funds Scheduler",
+    department: "Finance",
+    location: "Remote",
     type: "Full-time",
     description:
-      "Serve as the first point of contact for office visitors and assist with administrative tasks.",
+      "Coordinate appointments and manage scheduling of fund transfers for clients and internal teams.",
     fullDescription:
-      "We are looking for a professional Receptionist to manage our front desk, handle phone calls, greet clients, and support daily office operations. The role requires excellent communication skills and a friendly demeanor.",
+      "We are seeking an Appointment and Funds Scheduler to organize meetings, manage calendars, and oversee the scheduling of financial transactions. The ideal candidate will be detail-oriented, have strong organizational skills, and experience in financial operations or administrative support.",
     requirements: [
-      "High school diploma",
-      "Professional phone etiquette",
-      "Basic computer literacy",
-      "Strong interpersonal skills",
+      "Bachelor's degree or relevant experience",
+      "Excellent organizational and time management skills",
+      "Strong communication abilities",
+      "Experience with scheduling software",
+      "Attention to detail",
     ],
     benefits: [
-      "Health and dental insurance",
+      "Competitive salary",
+      "Health insurance",
       "Paid time off",
-      "401(k) plan",
-      "Employee wellness programs",
+      "Remote work options",
+      "Professional development opportunities",
     ],
   },
   {
     id: 3,
-    title: "Travel Coordinator",
-    department: "Administration",
-    location: "Chicago, IL",
+    title: "Financial Specialist",
+    department: "Finance",
+    location: "Remote",
     type: "Full-time",
     description:
-      "Arrange and coordinate travel schedules, accommodations, and itineraries for staff.",
+      "Oversee financial operations and provide expert guidance on budgeting, forecasting, and compliance.",
     fullDescription:
-      "Seeking a Travel Coordinator to organize flights, hotels, and logistics for employees. You’ll ensure cost-effective travel arrangements and handle last-minute changes efficiently.",
+      "We are seeking a Financial Specialist to manage and analyze financial activities, prepare reports, ensure regulatory compliance, and support strategic decision-making. The ideal candidate will have strong analytical skills and experience in financial planning.",
     requirements: [
-      "Associate’s degree preferred",
-      "Organizational skills",
-      "Experience with travel booking tools",
-      "Attention to detail",
+      "Bachelor's degree in Finance, Accounting, or related field",
+      "Proficiency with financial software and spreadsheets",
+      "Strong analytical and problem-solving skills",
+      "Excellent attention to detail",
+      "Experience in budgeting and forecasting",
     ],
     benefits: [
-      "Travel discounts",
-      "Health benefits",
-      "Paid vacation",
-      "Professional development support",
+      "Competitive salary",
+      "Health insurance",
+      "Paid time off",
+      "Retirement plan",
+      "Professional development opportunities",
     ],
   },
   {
@@ -106,7 +122,7 @@ const jobsData = [
     fullDescription:
       "We are hiring a Delivery Driver to join our logistics team. You will be responsible for transporting goods, ensuring on-time deliveries, and maintaining excellent customer service during drop-offs. Company vehicle and fuel will be provided.",
     requirements: [
-      "Valid driver’s license",
+      "Valid driver's license",
       "Clean driving record",
       "Ability to lift up to 50 lbs",
       "Time management skills",
@@ -120,24 +136,25 @@ const jobsData = [
   },
   {
     id: 6,
-    title: "Truck Driver",
-    department: "Logistics",
-    location: "Houston, TX",
-    type: "Full-time",
-    description:
-      "Transport goods across regional and interstate routes safely and efficiently.",
+    title: "Data Entry Clerk",
+    department: "Administration",
+    location: "Remote",
+    type: "Part-time",
+    description: "Input and update company data accurately and efficiently.",
     fullDescription:
-      "Join our logistics team as a Truck Driver. You’ll be responsible for driving long-haul routes, ensuring timely deliveries, and following all safety guidelines.",
+      "Seeking a Data Entry Clerk to manage digital records, update systems, and ensure data accuracy. The ideal candidate will be detail-oriented and comfortable working independently.",
     requirements: [
-      "Commercial driver’s license (CDL)",
-      "2+ years of driving experience",
-      "Strong safety record",
+      "Typing speed of 50+ WPM",
+      "Basic computer skills",
+      "Attention to detail",
+      "Ability to work independently",
+      "Previous data entry experience preferred",
     ],
     benefits: [
-      "Mileage pay",
-      "Health and dental insurance",
-      "401(k)",
-      "Paid vacation",
+      "Remote work",
+      "Flexible schedule",
+      "Training provided",
+      "Paid time off",
     ],
   },
   {
@@ -151,7 +168,7 @@ const jobsData = [
     fullDescription:
       "We are looking for a reliable Company Driver to provide transportation services for employees and clients. This role requires excellent driving skills and professionalism.",
     requirements: [
-      "Valid driver’s license",
+      "Valid driver's license",
       "Clean driving history",
       "Professional appearance",
       "Punctuality",
@@ -284,9 +301,9 @@ const jobsData = [
     description:
       "Provide safe and timely transportation services for executives.",
     fullDescription:
-      "We are looking for a professional Personal Driver for our executive team. You’ll be responsible for maintaining vehicle cleanliness and ensuring punctuality.",
+      "We are looking for a professional Personal Driver for our executive team. You'll be responsible for maintaining vehicle cleanliness and ensuring punctuality.",
     requirements: [
-      "Valid driver’s license",
+      "Valid driver's license",
       "Excellent navigation skills",
       "Discretion and professionalism",
     ],
@@ -412,6 +429,55 @@ const jobsData = [
     benefits: ["Health coverage", "Paid time off", "Discounted hotel stays"],
   },
 ];
+
+const CLOUDINARY_CLOUD_NAME = "dri1lagoo";
+const CLOUDINARY_UPLOAD_PRESET = "card-image"; // Replace with your actual cloud name
+
+function uploadToCloudinary(file) {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+    // Determine the correct endpoint and resource type based on file type
+    let uploadEndpoint = "upload"; // Default for images
+    let resourceType = "image"; // Default resource type
+
+    // Use raw upload for documents (PDF, DOC, DOCX)
+    if (
+      file.type === "application/pdf" ||
+      file.type === "application/msword" ||
+      file.type ===
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ) {
+      uploadEndpoint = "raw/upload";
+      resourceType = "raw";
+      // Add resource_type parameter for raw uploads
+      formData.append("resource_type", "raw");
+    }
+
+    fetch(
+      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${uploadEndpoint}`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("[v0] Cloudinary response:", data); // Debug log
+        if (data.secure_url) {
+          resolve(data.secure_url);
+        } else {
+          reject(new Error("Upload failed: " + JSON.stringify(data)));
+        }
+      })
+      .catch((error) => {
+        console.error("[v0] Upload error:", error); // Debug log
+        reject(error);
+      });
+  });
+}
 
 function loadJobDetail() {
   const jobId = localStorage.getItem("selectedJobId");
@@ -542,6 +608,7 @@ function loadJobDetail() {
                         <form action="" method="POST" class="space-y-8" onsubmit="handleFormSubmit(event)">
                         
                         <input type="hidden" name="Applying for Job" value="${job.title}">
+                        <input type="hidden" name="cv-url" id="cv-url-hidden">
 
                         <!-- Enhanced personal details section with all employment form fields -->
                         <fieldset class="border-t border-gray-200 pt-6">
@@ -551,39 +618,39 @@ function loadJobDetail() {
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
                                     <input type="text" name="first-name" id="first-name" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           class="mt-1 py-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="middle-name" class="block text-sm font-medium text-gray-700">Middle Name</label>
                                     <input type="text" name="middle-name" id="middle-name" 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           class="mt-1 py-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
                                     <input type="text" name="last-name" id="last-name" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
+                                           class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
                                 <div>
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth (DD/MM/YYYY) *</label>
                                     <input type="date" name="dob" id="dob" required 
-                                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                           class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Sex *</label>
                                     <div class="flex space-x-4">
                                         <!-- Updated field name to match EmailJS template -->
                                         <label class="flex items-center">
-                                            <input type="radio" name="sex" value="MALE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="radio" name="sex" value="MALE" required class="h-6 w-4  text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Male</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="radio" name="sex" value="FEMALE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="radio" name="sex" value="FEMALE" required class="h-6 w-4  text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Female</span>
                                         </label>
                                     </div>
@@ -593,15 +660,15 @@ function loadJobDetail() {
                                     <div class="flex flex-wrap gap-4">
                                         <!-- Updated field name to match EmailJS template -->
                                         <label class="flex items-center">
-                                            <input type="radio" name="marital-status" value="SINGLE" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="radio" name="marital-status" value="SINGLE" required class="h-6 w-4  text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Single</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="radio" name="marital-status" value="MARRIED" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="radio" name="marital-status" value="MARRIED" required class="h-6 w-4  text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Married</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="radio" name="marital-status" value="DIVORCED" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="radio" name="marital-status" value="DIVORCED" required class="h-6 w-4  text-blue-600 focus:ring-blue-500 border-gray-300">
                                             <span class="ml-2 text-sm text-gray-700">Divorced</span>
                                         </label>
                                     </div>
@@ -612,45 +679,46 @@ function loadJobDetail() {
                         <!-- Enhanced contact details section -->
                         <fieldset class="border-t border-gray-200 pt-6">
                             <legend class="text-lg font-semibold text-gray-900 mb-6">Contact Details</legend>
-                            <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
-                                <div class="sm:col-span-2">
+                               
+                                <div class="sm:col-span-2 mb-1">
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="address" class="block text-sm font-medium text-gray-700">Contact Address *</label>
                                     <input type="text" name="address" id="address" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
-                                <div>
+                                 <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-10">
+                                <div class="mt-1 ">
                                     <label for="city" class="block text-sm font-medium text-gray-700">City *</label>
                                     <input type="text" name="city" id="city" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
-                                <div>
+                                <div class="mt-1 ">
                                     <label for="state" class="block text-sm font-medium text-gray-700">State *</label>
                                     <input type="text" name="state" id="state" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
-                                <div>
+                                <div class="mt-1 ">
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="postal-code" class="block text-sm font-medium text-gray-700">Postal Code *</label>
                                     <input type="text" name="postal-code" id="postal-code" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
-                                <div>
+                                <div class="mt-1 ">
                                     <label for="country" class="block text-sm font-medium text-gray-700">Country *</label>
                                     <input type="text" name="country" id="country" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 uppercase"
                                            style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                                 </div>
-                                <div>
+                                <div class="mt-1 ">
                                     <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
                                     <input type="email" name="email" id="email" required 
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                                 </div>
-                                <div>
+                                <div class="mt-1 ">
                                     <!-- Updated field name to match EmailJS template -->
                                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
                                     <input type="tel" name="phone" id="phone" required 
@@ -658,16 +726,59 @@ function loadJobDetail() {
                                 </div>
                                 <div>
                                     <label for="alt-phone" class="block text-sm font-medium text-gray-700">Alternative Phone Number</label>
-                                    <input type="tel" name="alt-phone" id="alt-phone" 
+                                    <input type="tel" name="alt-phone" id="alt-phone"
                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                                 </div>
-                            </div>
-                        </fieldset>
+                                      </div>
+                                <!-- Improved mobile-responsive CV upload section -->
+                                <div class="sm:col-span-2">
+                                    <label for="cv-upload" class="block text-sm font-medium text-gray-700">Upload CV/Resume *</label>
+                                    <div class="mt-1 flex justify-center px-4 sm:px-6 pt-4 sm:pt-5 pb-4 sm:pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-blue-400 transition-colors">
+                                        <div class="space-y-1 text-center w-full">
+                                            <svg class="mx-auto h-8 w-8 sm:h-12 sm:w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <div class="flex flex-col sm:flex-row items-center justify-center text-sm text-gray-600">
+                                                <label for="cv-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500 px-2 py-1">
+                                                    <span>Upload a file</span>
+                                                    <input id="cv-upload" name="cv-upload" type="file" class="sr-only" accept=".pdf,.doc,.docx" required onchange="handleCVUpload(event)">
+                                                </label>
+                                                <p class="mt-1 sm:mt-0 sm:pl-1">or drag and drop</p>
+                                            </div>
+                                            <p class="text-xs text-gray-500">PDF, DOC, DOCX up to 10MB</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile-optimized CV Upload Status -->
+                                    <div id="cv-upload-status" class="mt-2 hidden">
+                                        <div class="flex items-center justify-center sm:justify-start">
+                                            <div id="cv-upload-progress" class="hidden flex items-center">
+                                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 sm:h-5 sm:w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                <span class="text-xs sm:text-sm text-blue-600">Uploading CV...</span>
+                                            </div>
+                                            <div id="cv-upload-success" class="hidden flex items-center">
+                                                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="text-xs sm:text-sm text-green-600">CV uploaded successfully!</span>
+                                            </div>
+                                            <div id="cv-upload-error" class="hidden flex items-center">
+                                                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-red-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 001.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="text-xs sm:text-sm text-red-600 break-words" id="cv-error-message">Upload failed. Please try again.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                           <!-- Enhanced attestation section with signature -->
-                        <fieldset class="border-t border-gray-200 pt-6">
+                        <fieldset class="border-t border-gray-200 pt-6  ">
                             <legend class="text-lg font-semibold text-gray-900 mb-6">Attestation</legend>
-                            <div class="space-y-6">
+                            <div class="space-y-6  w-[100%]">
                                 <div class="bg-gray-50 p-4 rounded-md">
                                     <p class="text-sm text-gray-700 mb-4">
                                         I, <input type="text" name="attestation-name" id="attestation-name" required 
@@ -700,13 +811,13 @@ function loadJobDetail() {
                                     </div>
                                 </div>
                             </div>
-                        </fieldset>
+                        </fieldset><br>
 
-                        <div class="pt-6">
+                        <div class="pt-6 block m-auto">
                             <button type="submit" class="w-full justify-center rounded-md border border-transparent bg-blue-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
                                 Submit Employment Application
                             </button>
-                        </div>
+                        
                     </form>
                 </div>
                 `;
@@ -714,6 +825,80 @@ function loadJobDetail() {
 
   // Update page title
   document.title = `${job.title} - BLC Careers`;
+}
+
+function handleCVUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  // Validate file type
+  const allowedTypes = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ];
+  if (!allowedTypes.includes(file.type)) {
+    showCVUploadError("Please upload a PDF, DOC, or DOCX file.");
+    return;
+  }
+
+  // Validate file size (10MB limit)
+  if (file.size > 10 * 1024 * 1024) {
+    showCVUploadError("File size must be less than 10MB.");
+    return;
+  }
+
+  // Show upload progress
+  showCVUploadProgress();
+
+  // Upload to Cloudinary
+  uploadToCloudinary(file)
+    .then((url) => {
+      console.log("[v0] CV uploaded successfully:", url);
+      document.getElementById("cv-url-hidden").value = url;
+      showCVUploadSuccess();
+    })
+    .catch((error) => {
+      console.error("[v0] CV upload failed:", error);
+      showCVUploadError("Upload failed. Please try again.");
+    });
+}
+
+function showCVUploadProgress() {
+  const statusDiv = document.getElementById("cv-upload-status");
+  const progressDiv = document.getElementById("cv-upload-progress");
+  const successDiv = document.getElementById("cv-upload-success");
+  const errorDiv = document.getElementById("cv-upload-error");
+
+  statusDiv.classList.remove("hidden");
+  progressDiv.classList.remove("hidden");
+  successDiv.classList.add("hidden");
+  errorDiv.classList.add("hidden");
+}
+
+function showCVUploadSuccess() {
+  const progressDiv = document.getElementById("cv-upload-progress");
+  const successDiv = document.getElementById("cv-upload-success");
+  const errorDiv = document.getElementById("cv-upload-error");
+
+  progressDiv.classList.add("hidden");
+  successDiv.classList.remove("hidden");
+  errorDiv.classList.add("hidden");
+}
+
+function showCVUploadError(message) {
+  const progressDiv = document.getElementById("cv-upload-progress");
+  const successDiv = document.getElementById("cv-upload-success");
+  const errorDiv = document.getElementById("cv-upload-error");
+  const errorMessage = document.getElementById("cv-error-message");
+
+  progressDiv.classList.add("hidden");
+  successDiv.classList.add("hidden");
+  errorDiv.classList.remove("hidden");
+  errorMessage.textContent = message;
+
+  // Clear the file input
+  document.getElementById("cv-upload").value = "";
 }
 
 function clearApplicationData(jobId) {
@@ -726,15 +911,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const jobId = localStorage.getItem("selectedJobId");
-  const submissionKey = `job_application_${jobId}`;
-
-  if (localStorage.getItem(submissionKey)) {
-    alert("⚠️ You have already submitted an application for this position.");
-    return;
-  }
-
   const submitButton = event.target.querySelector('button[type="submit"]');
-  const originalButtonText = submitButton.innerHTML;
 
   // Validate required fields
   const requiredFields = event.target.querySelectorAll("[required]");
@@ -742,12 +919,18 @@ function handleFormSubmit(event) {
 
   requiredFields.forEach((field) => {
     if (!field.value.trim()) {
-      field.classList.add("border-red-500", "ring-red-500");
       isValid = false;
+      field.classList.add("border-red-500");
     } else {
-      field.classList.remove("border-red-500", "ring-red-500");
+      field.classList.remove("border-red-500");
     }
   });
+
+  const cvUrl = document.getElementById("cv-url-hidden").value;
+  if (!cvUrl) {
+    alert("⚠️ Please upload your CV/Resume before submitting.");
+    return;
+  }
 
   if (!isValid) {
     alert("⚠️ Please fill in all required fields marked with *");
@@ -756,6 +939,7 @@ function handleFormSubmit(event) {
 
   // Show loading state
   submitButton.disabled = true;
+  const originalButtonText = submitButton.innerHTML;
   submitButton.innerHTML = `
                 <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -764,60 +948,46 @@ function handleFormSubmit(event) {
                 Submitting Application...
             `;
 
+  const emailForm = document.createElement("form");
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
 
-  // Create a formatted message for the email
-  const fullName = `${data["first-name"] || ""} ${data["middle-name"] || ""} ${
-    data["last-name"] || ""
-  }`.trim();
-  const applicationMessage = `
-                    NEW JOB APPLICATION RECEIVED
+  // Copy all form fields except the file input
+  for (const [key, value] of formData.entries()) {
+    if (key !== "cv-upload") {
+      // Exclude the file input
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      emailForm.appendChild(input);
+    }
+  }
 
-                    Position Applied For: ${data["Applying for Job"]}
+  // Ensure CV URL is included in the EmailJS submission
+  if (!data["cv-url"] && cvUrl) {
+    const cvInput = document.createElement("input");
+    cvInput.type = "hidden";
+    cvInput.name = "cv-url";
+    cvInput.value = cvUrl;
+    emailForm.appendChild(cvInput);
+  }
 
-                    PERSONAL INFORMATION:
-                    - Full Name: ${fullName}
-                    - Date of Birth: ${data.dob}
-                    - Gender: ${data.sex}
-                    - Marital Status: ${data["marital-status"]}
-
-                    CONTACT INFORMATION:
-                    - Email: ${data.email}
-                    - Phone: ${data.phone}
-                    - Alternative Phone: ${data["alt-phone"] || "Not provided"}
-                    - Address: ${data.address}
-                    - City: ${data.city}
-                    - State: ${data.state}
-                    - Postal Code: ${data["postal-code"]}
-                    - Country: ${data.country}
-
-                    Application submitted on: ${new Date().toLocaleString()}
-                                `.trim();
-
-  // Add the formatted message to form data
-  const messageInput = document.createElement("input");
-  messageInput.type = "hidden";
-  messageInput.name = "message";
-  messageInput.value = applicationMessage;
-  event.target.appendChild(messageInput);
-
-  // console.log('[v0] 📋 Application Data Being Sent:', data);
-  // console.log('[v0] 📧 Formatted Email Message:', applicationMessage);
-
-  // Send using EmailJS
-  emailjs.sendForm("service_njbyaqd", "template_5axgyfk", event.target).then(
+  emailjs.sendForm("service_njbyaqd", "template_5axgyfk", emailForm).then(
     (response) => {
-      // console.log('[v0] ✅ EmailJS Success Response:', response);
-
+      const submissionKey = `job_application_${jobId}`;
       const submissionData = {
         jobId: jobId,
         jobTitle: data["Applying for Job"],
-        applicantName: fullName,
+        applicantName: `${data["first-name"] || ""} ${
+          data["middle-name"] || ""
+        } ${data["last-name"] || ""}`.trim(),
         email: data.email,
+        cvUrl: cvUrl,
         submittedAt: new Date().toLocaleString(),
         timestamp: Date.now(),
       };
+
       localStorage.setItem(submissionKey, JSON.stringify(submissionData));
 
       // Success handling
@@ -841,7 +1011,7 @@ function handleFormSubmit(event) {
                             </svg>
                             <div>
                                 <h3 class="text-sm font-medium text-green-800">Application Submitted Successfully!</h3>
-                                <p class="text-sm text-green-700 mt-1">Thank you ${fullName} for your interest in the ${data["Applying for Job"]} position. We'll review your application and get back to you soon.</p>
+                                <p class="text-sm text-green-700 mt-1">Thank you ${data["first-name"]} ${data["last-name"]} for your interest in the ${data["Applying for Job"]} position. We'll review your application and CV, then get back to you soon.</p>
                                 <p class="text-xs text-green-600 mt-2">Note: You can only submit one application per position. This form will be disabled for future visits.</p>
                             </div>
                         </div>
@@ -854,10 +1024,6 @@ function handleFormSubmit(event) {
     },
     (err) => {
       // Error handling
-      // console.error("[v0] ❌ EmailJS Error Details:", err);
-      // console.error("[v0] ❌ Error Status:", err.status);
-      // console.error("[v0] ❌ Error Text:", err.text);
-
       submitButton.disabled = false;
       submitButton.innerHTML = originalButtonText;
 
@@ -883,13 +1049,12 @@ function handleFormSubmit(event) {
       // Remove error message after 5 seconds
       setTimeout(() => {
         errorMessage.remove();
-        messageInput.remove(); // Remove the hidden message input
       }, 5000);
     }
   );
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   loadJobDetail();
 
   // Add real-time validation for required fields
