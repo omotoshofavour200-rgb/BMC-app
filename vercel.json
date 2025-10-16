@@ -1,7 +1,13 @@
-{ "rewrites": [
-{ "source": "/employee-info", "destination": "/employee-info.html" },
-{ "source": "/job-detail", "destination": "/job-detail.html" },
-{ "source": "/careers", "destination": "/careers.html" },
-{ "source": "/Agreement", "destination": "/Agreement-and-privacy-notice.html" }
-]
+{
+  "rewrites": [
+    { "source": "/employee-info", "destination": "/employee-info.html" },
+    { "source": "/job-detail", "destination": "/job-detail.html" },
+    { "source": "/careers", "destination": "/careers.html" },
+    {
+      "source": "/Agreement",
+      "destination": "/Agreement-and-privacy-notice.html"
+    },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
 }
